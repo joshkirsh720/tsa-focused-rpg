@@ -770,7 +770,7 @@ Animator:
   m_GameObject: {fileID: 1270441831}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d28610daab5b52241834bf117dc700c3, type: 2}
+  m_Controller: {fileID: 9100000, guid: ad037bcd25f2afc419352b5271279373, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1040,7 +1040,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2e11db6fb464cb14aafca42b2562ed81,
+      objectReference: {fileID: 21300000, guid: 42c180cb6a4016b48ba8ca487d18f063,
         type: 3}
     - target: {fileID: 5928078305834237541, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}

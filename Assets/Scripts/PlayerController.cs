@@ -7,13 +7,13 @@ public class PlayerController : MonoBehaviour
     public int speed;
     public Rigidbody2D rb;
     public Animator anim;
-    public bool isWalking;
-    public bool isIdle;
+    public int currentstate;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        currentstate = 0;
     }
 
     // Update is called once per frame
@@ -26,8 +26,14 @@ public class PlayerController : MonoBehaviour
     {
         float xVel = 0;
         float yVel = 0;
-        isWalking = false;
-        isIdle = false;
+        bool isUpWalking = false;
+        bool isDownWalking = false;
+        bool isWalking = false;
+        
+        bool isIdle = false;
+        bool isSideIdle = false;
+        bool isDownIdle = false;
+        bool isUpIdle = false;
 
         if (Input.GetKey(KeyCode.UpArrow)) yVel = speed;
         if (Input.GetKey(KeyCode.DownArrow)) yVel = -speed;
@@ -41,20 +47,50 @@ public class PlayerController : MonoBehaviour
             xVel = speed;
             transform.localScale = new Vector3(20, 20, 1);
         }
-        if (yVel != 0 || xVel != 0)
+        if (yVel == 0 && xVel != 0)
         {
             isWalking = true;
-            
+            currentstate = 1;
         }
+        else if(yVel > 0)
+        {
+            isUpWalking = true;
+            currentstate = 2;
+        }
+        else if(yVel < 0)
+        {
+            isDownWalking = true;
+            currentstate = 3;
+        }
+
         else
         {
-            isIdle = true;
-            
+            if (currentstate == 0)
+            {
+                isIdle = true;
+            }
+            if (currentstate == 1)
+            {
+                isSideIdle = true;
+            }
+            else if (currentstate == 2)
+            {
+                isUpIdle = true;
+            }
+            else if(currentstate == 3)
+            {
+                isDownIdle = true;
+            }
         }
         anim.SetBool("isIdle", isIdle);
+        anim.SetBool("isDownIdle", isDownIdle);
+        anim.SetBool("isUpIdle", isUpIdle);
+        anim.SetBool("isSideIdle", isSideIdle);
         anim.SetBool("isWalking", isWalking);
+        anim.SetBool("isUpWalking", isUpWalking);
+        anim.SetBool("isDownWalking", isDownWalking);
         rb.velocity = new Vector2(xVel, yVel);
 
-        
+
     }
 }
