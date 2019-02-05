@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         float xVel = 0;
         float yVel = 0;
+
         bool isUpWalking = false;
         bool isDownWalking = false;
         bool isWalking = false;
@@ -35,17 +36,21 @@ public class PlayerController : MonoBehaviour
         bool isDownIdle = false;
         bool isUpIdle = false;
 
+        bool isSideBow = false;
+        bool isDownBow = false;
+        bool isUpBow = false;
+
         if (Input.GetKey(KeyCode.UpArrow)) yVel = speed;
         if (Input.GetKey(KeyCode.DownArrow)) yVel = -speed;
         if (Input.GetKey(KeyCode.LeftArrow)) 
         {
             xVel = -speed;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-20, 20, 1);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             xVel = speed;
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(20, 20, 1);
         }
         if (yVel == 0 && xVel != 0)
         {
@@ -91,6 +96,23 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isDownWalking", isDownWalking);
         rb.velocity = new Vector2(xVel, yVel);
 
-
+        if(Input.GetKey("space"))
+        {
+            if (currentstate == 1)
+            {
+                isSideBow = true;
+            }
+            else if (currentstate == 2)
+            {
+                isUpBow = true;
+            }
+            else if (currentstate == 3)
+            {
+                isDownBow = true;
+            }
+        }
+        anim.SetBool("isSideBow", isSideBow);   
+        anim.SetBool("isDownBow", isDownBow);
+        anim.SetBool("isUpBow", isUpBow);
     }
 }
