@@ -45,12 +45,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow)) 
         {
             xVel = -speed;
-            transform.localScale = new Vector3(-1, 20, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             xVel = speed;
-            transform.localScale = new Vector3(1, 20, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         if (yVel == 0 && xVel != 0)
         {
