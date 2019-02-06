@@ -87,14 +87,8 @@ public class PlayerController : MonoBehaviour
                 isDownIdle = true;
             }
         }
-        anim.SetBool("isIdle", isIdle);
-        anim.SetBool("isDownIdle", isDownIdle);
-        anim.SetBool("isUpIdle", isUpIdle);
-        anim.SetBool("isSideIdle", isSideIdle);
-        anim.SetBool("isWalking", isWalking);
-        anim.SetBool("isUpWalking", isUpWalking);
-        anim.SetBool("isDownWalking", isDownWalking);
-        rb.velocity = new Vector2(xVel, yVel);
+
+       
 
         if(Input.GetKey("space"))
         {
@@ -110,9 +104,25 @@ public class PlayerController : MonoBehaviour
             {
                 isDownBow = true;
             }
+            xVel = 0;
+            yVel = 0;
         }
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("SideBowAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("DownBowAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("UpBowAttack"))
+        {
+            xVel = 0;
+            yVel = 0;
+        }
+        rb.velocity = new Vector2(xVel, yVel);
         anim.SetBool("isSideBow", isSideBow);   
         anim.SetBool("isDownBow", isDownBow);
         anim.SetBool("isUpBow", isUpBow);
+        anim.SetBool("isIdle", isIdle);
+        anim.SetBool("isDownIdle", isDownIdle);
+        anim.SetBool("isUpIdle", isUpIdle);
+        anim.SetBool("isSideIdle", isSideIdle);
+        anim.SetBool("isWalking", isWalking);
+        anim.SetBool("isUpWalking", isUpWalking);
+        anim.SetBool("isDownWalking", isDownWalking);
+       
     }
 }
