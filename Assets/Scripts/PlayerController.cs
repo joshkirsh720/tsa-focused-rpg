@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     public int currentstate;
+    public float timefromattack;
+    public float waitTime = 1.0f;
+    public float xVel;
+   public  float yVel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        print(Time.time);
         float xVel = 0;
         float yVel = 0;
 
@@ -104,14 +110,15 @@ public class PlayerController : MonoBehaviour
             {
                 isDownBow = true;
             }
-            xVel = 0;
-            yVel = 0;
+            timefromattack = Time.time;
         }
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("SideBowAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("DownBowAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("UpBowAttack"))
+        if((Time.time -timefromattack) < waitTime)
         {
             xVel = 0;
             yVel = 0;
+
         }
+
         rb.velocity = new Vector2(xVel, yVel);
         anim.SetBool("isSideBow", isSideBow);   
         anim.SetBool("isDownBow", isDownBow);
