@@ -59,7 +59,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 13.244858
+  orthographic size: 1.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -68,7 +68,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -96,4 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  dampening: 0.3
+  dampening: 0.25
+  rightXbounds: 2.45
+  leftXbounds: 1.2
+  topYbounds: 1.45
+  botYbounds: 4.5
