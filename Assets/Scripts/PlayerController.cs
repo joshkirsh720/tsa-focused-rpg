@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public float timefromattack;
     public float waitTime = 1.0f;
     public float xVel;
-   public  float yVel;
+    public float yVel;
+    public int xSign, ySign;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
             xVel = speed;
             transform.localScale = new Vector3(1, 1, 1);
         }
+
         if (yVel == 0 && xVel != 0)
         {
             isWalking = true;
@@ -73,7 +76,6 @@ public class PlayerController : MonoBehaviour
             isDownWalking = true;
             currentstate = 3;
         }
-
         else
         {
             if (currentstate == 0)
@@ -119,6 +121,19 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        //set x and y signs to keep track of which direction the player is facing
+        if(xVel != 0 || yVel != 0)
+        {
+            xSign = Math.Sign(xVel);
+            ySign = Math.Sign(yVel);
+
+        
+        }
+
+        Debug.Log("xSign: " + xSign + " ySign: " + ySign);
+        Debug.Log("xVel: " + xVel + " yVel: " + yVel);
+
+
         rb.velocity = new Vector2(xVel, yVel);
         anim.SetBool("isSideBow", isSideBow);   
         anim.SetBool("isDownBow", isDownBow);
@@ -130,6 +145,5 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
         anim.SetBool("isUpWalking", isUpWalking);
         anim.SetBool("isDownWalking", isDownWalking);
-       
     }
 }
