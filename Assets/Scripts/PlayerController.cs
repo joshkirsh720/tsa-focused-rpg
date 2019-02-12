@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(Time.time);
+      
         float xVel = 0;
         float yVel = 0;
 
@@ -130,8 +130,8 @@ public class PlayerController : MonoBehaviour
         
         }
 
-        Debug.Log("xSign: " + xSign + " ySign: " + ySign);
-        Debug.Log("xVel: " + xVel + " yVel: " + yVel);
+        //Debug.Log("xSign: " + xSign + " ySign: " + ySign);
+        //Debug.Log("xVel: " + xVel + " yVel: " + yVel);
 
 
         rb.velocity = new Vector2(xVel, yVel);
