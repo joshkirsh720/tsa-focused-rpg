@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
        
 
-        if(Input.GetKey("space"))
+        if(Input.GetKey("space") && (Time.time -timefromattack) > waitTime)
         {
             if (currentstate == 1)
             {
