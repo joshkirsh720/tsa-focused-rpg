@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class DungeonLoader : MonoBehaviour
 {
     // Start is called before the first frame update
+    public TextMeshProUGUI Tmptxt;
+
     void Start()
     {
         
@@ -18,8 +21,21 @@ public class DungeonLoader : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        SceneManager.LoadScene("Dungeon");
+        Tmptxt.text = "Press enter to enter the dungeon.";       
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (Input.GetKey("enter"))
+        {
+            SceneManager.LoadScene("Dungeon");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Tmptxt.text = "";
     }
 }
