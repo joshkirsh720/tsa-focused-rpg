@@ -13,7 +13,7 @@ public class DungeonLoader : MonoBehaviour
 
     void Start()
     {
-      
+        Box.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,9 +24,11 @@ public class DungeonLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-
-        Tmptxt.text = "Press enter to enter the dungeon.";
-        Box.SetActive(true);
+        if(col.gameObject.name == "notwall6")
+        {
+            Tmptxt.text = "Press enter to enter the dungeon.";
+            Box.SetActive(true);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D col)
