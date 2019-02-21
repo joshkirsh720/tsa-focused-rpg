@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class DungeonLoader : MonoBehaviour
+public class PlayerText : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI Tmptxt;
@@ -13,7 +13,7 @@ public class DungeonLoader : MonoBehaviour
 
     void Start()
     {
-        Box.SetActive(false);
+
     }
 
     // Update is called once per frame
