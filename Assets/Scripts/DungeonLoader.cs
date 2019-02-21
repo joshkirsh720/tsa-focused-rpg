@@ -23,19 +23,8 @@ public class DungeonLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Tmptxt.text = "Press enter to enter the dungeon.";       
+        SceneManager.LoadScene("Dungeon");
     }
 
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        if (Input.GetKey(KeyCode.Return))
-        {
-            SceneManager.LoadScene("Dungeon");
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Tmptxt.text = "";
-    }
+  
 }

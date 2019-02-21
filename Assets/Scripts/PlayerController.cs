@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float xVel;
     public float yVel;
     public int xSign, ySign;
+    public int amountofkeys;
 
     // Start is called before the first frame update
     void Start()
