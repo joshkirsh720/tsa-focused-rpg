@@ -24,22 +24,30 @@ public class DungeonLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.name == "notwall6")
-        {
-            Tmptxt.text = "Press enter to enter the dungeon.";
-            Box.SetActive(true);
-        }
+        SceneManager.LoadScene("Dungeon");
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if(Input.GetKeyDown("return"))
-        {
-            SceneManager.LoadScene("Dungeon");
-        }
+
     }
 
     private void OnTriggerExit2D(Collider2D col)
+    {
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "rockbadge" || col.gameObject.name == "waterbadge")
+        {
+            Box.SetActive(true);
+            Tmptxt.text = "Unlocked Badge!";
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
     {
         Box.SetActive(false);
         Tmptxt.text = " ";

@@ -1061,6 +1061,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3263767862962034047, guid: 7c93d3777e7fd4ecd909e59363877303,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93d3777e7fd4ecd909e59363877303, type: 3}
 --- !u!1001 &566954449
@@ -1765,10 +1770,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 12
+  m_fontSize: 18
   m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1845,7 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tmptxt: {fileID: 925425351}
-  Box: {fileID: 0}
+  Box: {fileID: 1564016149}
 --- !u!222 &925425353
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1870,8 +1875,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 119.600006}
-  m_SizeDelta: {x: 151, y: 50}
+  m_AnchoredPosition: {x: -0.000019073, y: -118.7}
+  m_SizeDelta: {x: 735, y: 41.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &925963580
 PrefabInstance:
@@ -2436,8 +2441,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2530ac95bab57419e52a150abb2fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tmptxt: {fileID: 0}
-  Box: {fileID: 0}
+  Tmptxt: {fileID: 925425351}
+  Box: {fileID: 1564016149}
 --- !u!4 &1221662869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4273062056548666453, guid: 0b15a0e8bc685489091c7417063dfad6,
@@ -2831,7 +2836,7 @@ PrefabInstance:
     - target: {fileID: 9043030331946716615, guid: 29209026b50fd40599d1b7003223c8ac,
         type: 3}
       propertyPath: m_Name
-      value: notwall6
+      value: dungeondoor
       objectReference: {fileID: 0}
     - target: {fileID: 7751360813508076159, guid: 29209026b50fd40599d1b7003223c8ac,
         type: 3}
@@ -3959,6 +3964,11 @@ PrefabInstance:
     - target: {fileID: 5965190578517558253, guid: 7c93d3777e7fd4ecd909e59363877303,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263767862962034047, guid: 7c93d3777e7fd4ecd909e59363877303,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
