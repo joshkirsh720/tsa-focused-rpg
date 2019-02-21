@@ -9,6 +9,7 @@ public class DungeonLoader : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI Tmptxt;
+    public GameObject Box;
 
     void Start()
     {
@@ -23,8 +24,24 @@ public class DungeonLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        SceneManager.LoadScene("Dungeon");
+
+        Tmptxt.text = "Press enter to enter the dungeon.";
+        Box.SetActive(true);
     }
 
-  
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if(Input.GetKeyDown("return"))
+        {
+            SceneManager.LoadScene("Dungeon");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        Box.SetActive(false);
+        Tmptxt.text = " ";
+    }
+
+
 }
