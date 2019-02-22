@@ -27,6 +27,10 @@ public class Playerbadges : MonoBehaviour
         {
             return name;
         }
+        public bool returnlock()
+        {
+            return unlocked;
+        }
 
     }
 

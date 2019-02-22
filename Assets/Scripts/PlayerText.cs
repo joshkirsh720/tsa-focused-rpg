@@ -10,6 +10,7 @@ public class PlayerText : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI Tmptxt;
     public GameObject Box;
+    public Playerbadges.badge rockbadge;
 
     void Start()
     {
@@ -39,10 +40,10 @@ public class PlayerText : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name == "rockbadge" || col.gameObject.name == "waterbadge")
+        if(col.gameObject.tag == "badge")
         {
             Box.SetActive(true);
-            Tmptxt.text = "Unlocked Badge!";
+            Tmptxt.text = "Badge Unlocked!";
         }
 
     }

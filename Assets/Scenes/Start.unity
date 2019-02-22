@@ -1006,6 +1006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: waterbadge
       objectReference: {fileID: 0}
+    - target: {fileID: 5965190578517558250, guid: 7c93d3777e7fd4ecd909e59363877303,
+        type: 3}
+      propertyPath: m_TagString
+      value: badge
+      objectReference: {fileID: 0}
     - target: {fileID: 5965190578517558253, guid: 7c93d3777e7fd4ecd909e59363877303,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2282,6 +2287,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29209026b50fd40599d1b7003223c8ac, type: 3}
+--- !u!1 &1105078044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5965190578517558250, guid: 7c93d3777e7fd4ecd909e59363877303,
+    type: 3}
+  m_PrefabInstance: {fileID: 5120099269070972791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1105078045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105078044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2530ac95bab57419e52a150abb2fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tmptxt: {fileID: 925425351}
+  Box: {fileID: 1564016149}
 --- !u!4 &1105791422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4273062056548666453, guid: 0b15a0e8bc685489091c7417063dfad6,
@@ -3910,6 +3935,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rockbadge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965190578517558250, guid: 7c93d3777e7fd4ecd909e59363877303,
+        type: 3}
+      propertyPath: m_TagString
+      value: badge
       objectReference: {fileID: 0}
     - target: {fileID: 5965190578517558253, guid: 7c93d3777e7fd4ecd909e59363877303,
         type: 3}
