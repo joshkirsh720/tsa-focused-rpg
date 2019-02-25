@@ -6,7 +6,7 @@ using UnityEngine;
 public class Playerbadges : MonoBehaviour
 {
 
-
+    public PlayerText text;
     public BoxCollider2D box;
     public class badge
     {
@@ -42,7 +42,7 @@ public class Playerbadges : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -62,8 +62,13 @@ public class Playerbadges : MonoBehaviour
             string currentbadge = badges[count].returnname();
             if (col.gameObject.name == currentbadge)
             {
-                badges[count].unlocked = true;
-                print("UNLOCKED BADGE");
+                if (badges[count].unlocked == false)
+                {
+                    badges[count].unlocked = true;
+                    print("fuck");
+                    StartCoroutine(text.print("Badge Unlocked !", .7f));
+                }
+
             }
 
         }
