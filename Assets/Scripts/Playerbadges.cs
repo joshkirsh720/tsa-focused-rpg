@@ -66,7 +66,11 @@ public class Playerbadges : MonoBehaviour
                 {
                     badges[count].unlocked = true;
                     print("fuck");
-                    StartCoroutine(text.print("Badge Unlocked !", .7f));
+                    StartCoroutine(text.print("Badge Unlocked!", .7f));
+                }
+                else if (badges[count].unlocked == true)
+                {
+                    StartCoroutine(text.print("Badge Already Unlocked", .7f));
                 }
 
             }
