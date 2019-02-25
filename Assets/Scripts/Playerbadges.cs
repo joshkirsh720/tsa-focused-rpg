@@ -65,16 +65,19 @@ public class Playerbadges : MonoBehaviour
                 if (badges[count].unlocked == false)
                 {
                     badges[count].unlocked = true;
-                    print("fuck");
                     StartCoroutine(text.print("Badge Unlocked!", .7f));
                 }
                 else if (badges[count].unlocked == true)
                 {
-                    StartCoroutine(text.print("Badge Already Unlocked", .7f));
+                    StartCoroutine(text.print("Badge Already Unlocked!", .7f));
                 }
 
             }
 
+        }
+        if (col.gameObject.tag == "chest")
+        {
+            StartCoroutine(text.print("Press Z to open the chest.", 4.0f));
         }
     }
 }
