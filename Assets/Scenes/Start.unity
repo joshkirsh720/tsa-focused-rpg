@@ -850,11 +850,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6489184943024782483, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
+<<<<<<< HEAD
       propertyPath: box
       value: 
       objectReference: {fileID: 743267962}
     - target: {fileID: 6489184943024782483, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
+=======
+>>>>>>> c0009238b7aebb029c218a23049062b51dd30bc3
       propertyPath: text
       value: 
       objectReference: {fileID: 743267959}
