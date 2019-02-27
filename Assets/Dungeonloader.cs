@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class Dungeonloader : MonoBehaviour
 {
     // Start is called before the first frame update
+    public BoxCollider2D Box;
+    public string scene;
+
     void Start()
     {
         
@@ -17,8 +20,8 @@ public class Dungeonloader : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collider2D col)
+    public void OnCollisionEnter2D(Collision2D col)
     {
-        SceneManager.LoadScene("Dungeon");
+        SceneManager.LoadScene(scene);
     }
 }

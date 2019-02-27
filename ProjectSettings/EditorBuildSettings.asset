@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 1a69fb75605064759a1b3ab5bacf2763
+  - enabled: 1
+    path: Assets/Scenes/hiddenforest.unity
+    guid: 6a5067692775743ed9b53abb619f41b0
   m_configObjects: {}
