@@ -235,7 +235,7 @@ Transform:
   - {fileID: 978694032}
   - {fileID: 2014243379}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &318626682
 PrefabInstance:
@@ -423,8 +423,9 @@ Transform:
   - {fileID: 1053005347}
   - {fileID: 2025870375}
   - {fileID: 1424521228}
+  - {fileID: 2109710391}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &978694031
 GameObject:
@@ -49255,7 +49256,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 870977891}
     m_Modifications:
     - target: {fileID: 7731538664995574731, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
@@ -49265,17 +49266,17 @@ PrefabInstance:
     - target: {fileID: 9054171252311080051, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.357
+      value: 2.5695965
       objectReference: {fileID: 0}
     - target: {fileID: 9054171252311080051, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: 0.9732444
       objectReference: {fileID: 0}
     - target: {fileID: 9054171252311080051, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.19401687
+      value: 0.24481387
       objectReference: {fileID: 0}
     - target: {fileID: 9054171252311080051, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
@@ -49300,7 +49301,7 @@ PrefabInstance:
     - target: {fileID: 9054171252311080051, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9054171252311080051, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
@@ -49321,5 +49322,16 @@ PrefabInstance:
       propertyPath: scene
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 6662838171112340250, guid: 4757a0d732b5685448c99a04015e5a80,
+        type: 3}
+      propertyPath: scene
+      value: Start
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4757a0d732b5685448c99a04015e5a80, type: 3}
+--- !u!4 &2109710391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9054171252311080051, guid: 4757a0d732b5685448c99a04015e5a80,
+    type: 3}
+  m_PrefabInstance: {fileID: 2109710390}
+  m_PrefabAsset: {fileID: 0}
