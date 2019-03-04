@@ -75620,6 +75620,11 @@ PrefabInstance:
       propertyPath: waitTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5928078305834237538, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+        type: 3}
+      propertyPath: playerbadges
+      value: 
+      objectReference: {fileID: 1737687091}
     - target: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: m_IsTrigger
@@ -75672,6 +75677,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tmptxt: {fileID: 1242967398}
   Box: {fileID: 863735198}
+--- !u!114 &1737687091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6489184943024782483, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1643653930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737687089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06e13741666d4d3b94d275d50c02dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1783071007
 PrefabInstance:
   m_ObjectHideFlags: 0

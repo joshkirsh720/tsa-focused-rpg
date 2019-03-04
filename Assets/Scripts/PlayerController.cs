@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float yVel;
     public int xSign, ySign;
     public int amountofkeys;
+    public bool bow;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         currentstate = 0;
+        bow = false;
     }
 
     // Update is called once per frame
@@ -99,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
        
 
-        if(Input.GetKey("space"))
+        if(Input.GetKey("space") && bow)
         {
             if (currentstate == 1)
             {
@@ -115,7 +117,7 @@ public class PlayerController : MonoBehaviour
             }
             timefromattack = Time.time;
         }
-        if((Time.time -timefromattack) < waitTime)
+        if((Time.time -timefromattack) < waitTime && bow)
         {
             xVel = 0;
             yVel = 0;
@@ -146,5 +148,13 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
         anim.SetBool("isUpWalking", isUpWalking);
         anim.SetBool("isDownWalking", isDownWalking);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "BowChest")
+        {
+            bow = true;
+        }
     }
 }

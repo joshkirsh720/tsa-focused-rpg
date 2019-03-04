@@ -37,7 +37,6 @@ public class Playerbadges : MonoBehaviour
     public badge rockbadge = new badge("rockbadge");
     public badge waterbadge = new badge("waterbadge");
     List<badge> badges = new List<badge>();
-    public bool bow = false;
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +77,6 @@ public class Playerbadges : MonoBehaviour
         if (col.gameObject.tag == "chest")
         {
             StartCoroutine(text.print("Press Z to open the chest.", 4.0f));
-            bow = true;
         }
     }
 }

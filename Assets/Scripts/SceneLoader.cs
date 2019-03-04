@@ -13,7 +13,6 @@ public class SceneLoader : MonoBehaviour
     void Start()
     {
         GameObject Player = GameObject.Find("Player");
-        Playerbadges playerbadges = Player.GetComponent<PlayerBadges>;
     }
 
     // Update is called once per frame
