@@ -79,4 +79,12 @@ public class Playerbadges : MonoBehaviour
             StartCoroutine(text.print("Press Z to open the chest.", 4.0f));
         }
     }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if(Input.GetKeyDown("z"))
+        {
+
+        }
+    }
 }
