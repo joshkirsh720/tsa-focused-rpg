@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5928078305834237542}
   - component: {fileID: 1270441837}
   - component: {fileID: 6489184943024782483}
+  - component: {fileID: 8299825069530853525}
+  - component: {fileID: 6048906578442850412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -128,6 +130,7 @@ MonoBehaviour:
   xSign: 0
   ySign: 0
   amountofkeys: 0
+  chestController: {fileID: 8299825069530853525}
 --- !u!61 &5928078305834237542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,3 +188,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06e13741666d4d3b94d275d50c02dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  box: {fileID: 0}
+--- !u!114 &8299825069530853525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928078305834237539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b27f626b9614442bfa9e8e7222a1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 6048906578442850412}
+  opened: 0
+  bow: 0
+--- !u!114 &6048906578442850412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928078305834237539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2530ac95bab57419e52a150abb2fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tmptxt: {fileID: 0}
+  Box: {fileID: 0}

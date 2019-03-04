@@ -902,11 +902,6 @@ PrefabInstance:
       propertyPath: waitTime
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5928078305834237541, guid: 966e3e2ac90144c4c8a0813f814fa01b,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: m_Offset.y
@@ -932,7 +927,18 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 743267959}
-    m_RemovedComponents: []
+    - target: {fileID: 5928078305834237541, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299825069530853525, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 743267959}
+    m_RemovedComponents:
+    - {fileID: 6048906578442850412, guid: 966e3e2ac90144c4c8a0813f814fa01b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 966e3e2ac90144c4c8a0813f814fa01b, type: 3}
 --- !u!1001 &562632478
 PrefabInstance:
