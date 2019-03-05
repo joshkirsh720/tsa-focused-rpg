@@ -14,13 +14,16 @@ public class PlayerText : MonoBehaviour
 
    
 
-    public IEnumerator print(string text, float time)
+    public IEnumerator print(string text, float time, bool clear = true)
     {
         Box.SetActive(true);
         Tmptxt.text = text;
-        yield return new WaitForSeconds(time);
-        Box.SetActive(false);
-        Tmptxt.text = " ";
+        if (clear)
+        {
+            yield return new WaitForSeconds(time);
+            Box.SetActive(false);
+            Tmptxt.text = " ";
+        }
 
     }
 

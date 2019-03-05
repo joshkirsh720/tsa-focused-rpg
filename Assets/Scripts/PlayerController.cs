@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public int xSign, ySign;
     public int amountofkeys;
     public ChestController chestController;
+    public bool locked;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         bool isSideBow = false;
         bool isDownBow = false;
         bool isUpBow = false;
+
 
         if (Input.GetKey(KeyCode.UpArrow)) yVel = speed;
         if (Input.GetKey(KeyCode.DownArrow)) yVel = -speed;
@@ -135,8 +137,10 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("xSign: " + xSign + " ySign: " + ySign);
         //Debug.Log("xVel: " + xVel + " yVel: " + yVel);
 
-
-        rb.velocity = new Vector2(xVel, yVel);
+        if (locked == false)
+        {
+            rb.velocity = new Vector2(xVel, yVel);
+        }
         anim.SetBool("isSideBow", isSideBow);   
         anim.SetBool("isDownBow", isDownBow);
         anim.SetBool("isUpBow", isUpBow);

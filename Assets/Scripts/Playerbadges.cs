@@ -12,7 +12,7 @@ public class Playerbadges : MonoBehaviour
     {
         public static List<badge> badges = new List<badge>();
         public bool unlocked = false;
-        string name;
+        public string name;
         public badge(string name)
         {
             this.name = name;
@@ -34,8 +34,8 @@ public class Playerbadges : MonoBehaviour
 
     }
 
-    public badge rockbadge = new badge("rockbadge");
-    public badge waterbadge = new badge("waterbadge");
+    public badge rockbadge = new badge("Rock Badge");
+    public badge waterbadge = new badge("Water Badge");
     List<badge> badges = new List<badge>();
 
     // Start is called before the first frame update
@@ -64,7 +64,7 @@ public class Playerbadges : MonoBehaviour
                 if (badges[count].unlocked == false)
                 {
                     badges[count].unlocked = true;
-                    StartCoroutine(text.print("Badge Unlocked!", .7f));
+                    StartCoroutine(text.print(badges[count].name + " Unlocked!", .9f));
                 }
                 else if (badges[count].unlocked == true)
                 {
@@ -74,10 +74,7 @@ public class Playerbadges : MonoBehaviour
             }
 
         }
-        if (col.gameObject.tag == "chest")
-        {
-            StartCoroutine(text.print("Press Z to open the chest.", 4.0f));
-        }
+      
     }
 
     void OnCollisionStay2D(Collision2D col)

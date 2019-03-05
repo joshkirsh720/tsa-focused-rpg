@@ -25,14 +25,17 @@ public class ChestController : MonoBehaviour
         if (col.gameObject.tag == "chest")
         {
             StartCoroutine(text.print("Press Z to open the chest.", 1.5f));
+          
+
         }
+
     }
 
     void OnCollisionStay2D(Collision2D col)
     {
         if (col.gameObject.name == "BowChest")
         {
-            print("yes");
+
             if (Input.GetKeyDown("z") && !bow)
             {
                 StartCoroutine(text.print("You have found a bow! Press Space to use it.", 1.5f));
