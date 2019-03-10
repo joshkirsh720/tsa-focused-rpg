@@ -905,12 +905,12 @@ PrefabInstance:
     - target: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.035612762
+      value: -0.042716056
       objectReference: {fileID: 0}
     - target: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.19981492
+      value: 0.18570834
       objectReference: {fileID: 0}
     - target: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
@@ -927,6 +927,11 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 743267959}
+    - target: {fileID: 6489184943024782483, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+        type: 3}
+      propertyPath: box
+      value: 
+      objectReference: {fileID: 743267963}
     - target: {fileID: 5928078305834237541, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: m_Constraints
@@ -950,7 +955,7 @@ PrefabInstance:
     - target: {fileID: 5965190578517558250, guid: 7c93d3777e7fd4ecd909e59363877303,
         type: 3}
       propertyPath: m_Name
-      value: waterbadge
+      value: Water Badge
       objectReference: {fileID: 0}
     - target: {fileID: 5965190578517558250, guid: 7c93d3777e7fd4ecd909e59363877303,
         type: 3}
@@ -1307,6 +1312,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tmptxt: {fileID: 925425351}
   Box: {fileID: 1564016149}
+--- !u!61 &743267963 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+    type: 3}
+  m_PrefabInstance: {fileID: 535197830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &801843879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7751360813508076159, guid: 29209026b50fd40599d1b7003223c8ac,
@@ -2811,6 +2822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   say: fuck
   bx: {fileID: 1810134441}
+  player: {fileID: 0}
 --- !u!61 &1810134441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3604,7 +3616,7 @@ PrefabInstance:
     - target: {fileID: 5965190578517558250, guid: 7c93d3777e7fd4ecd909e59363877303,
         type: 3}
       propertyPath: m_Name
-      value: rockbadge
+      value: Rock Badge
       objectReference: {fileID: 0}
     - target: {fileID: 5965190578517558250, guid: 7c93d3777e7fd4ecd909e59363877303,
         type: 3}

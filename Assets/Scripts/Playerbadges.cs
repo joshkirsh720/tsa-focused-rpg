@@ -54,7 +54,7 @@ public class Playerbadges : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D col)
+   public void OnCollisionEnter2D(Collision2D col)
     {
         for (int count = 0; count < badges.Count; count++)
         {
