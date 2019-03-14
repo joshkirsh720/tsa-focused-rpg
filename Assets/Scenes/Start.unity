@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 258
+  m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1700,7 +1700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000019073, y: -118.7}
+  m_AnchoredPosition: {x: -0.000019073, y: -120}
   m_SizeDelta: {x: 735, y: 41.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &925963580
@@ -2836,7 +2836,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.12974359}
+  m_Offset: {x: 0, y: -0.060079947}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2847,7 +2847,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14278936, y: 0.06051281}
+  m_Size: {x: 0.14278936, y: 0.1998401}
   m_EdgeRadius: 0
 --- !u!1001 &1896918457
 PrefabInstance:

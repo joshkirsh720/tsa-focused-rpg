@@ -14,10 +14,23 @@ public class PlayerText : MonoBehaviour
 
    
 
-    public IEnumerator print(string text, float time, bool clear = true)
+    public IEnumerator print(string text, float time, bool clear = true, bool typewriter = true)
     {
         Box.SetActive(true);
-        Tmptxt.text = text;
+        if (typewriter)
+        {
+            int textf = text.Length + 1;
+            for (int x = 0; x < textf; x++)
+            {
+                string display = text.Substring(0, x);
+                Tmptxt.text = display;
+                yield return new WaitForSeconds(.065f);
+            }
+        }
+        else
+        {
+            Tmptxt.text = text;
+        }
         if (clear)
         {
             yield return new WaitForSeconds(time);
