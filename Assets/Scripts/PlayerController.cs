@@ -140,16 +140,45 @@ public class PlayerController : MonoBehaviour
         if (locked == false)
         {
             rb.velocity = new Vector2(xVel, yVel);
+            anim.SetBool("isSideBow", isSideBow);
+            anim.SetBool("isDownBow", isDownBow);
+            anim.SetBool("isUpBow", isUpBow);
+            anim.SetBool("isIdle", isIdle);
+            anim.SetBool("isDownIdle", isDownIdle);
+            anim.SetBool("isUpIdle", isUpIdle);
+            anim.SetBool("isSideIdle", isSideIdle);
+            anim.SetBool("isWalking", isWalking);
+            anim.SetBool("isUpWalking", isUpWalking);
+            anim.SetBool("isDownWalking", isDownWalking);
         }
-        anim.SetBool("isSideBow", isSideBow);   
-        anim.SetBool("isDownBow", isDownBow);
-        anim.SetBool("isUpBow", isUpBow);
-        anim.SetBool("isIdle", isIdle);
-        anim.SetBool("isDownIdle", isDownIdle);
-        anim.SetBool("isUpIdle", isUpIdle);
-        anim.SetBool("isSideIdle", isSideIdle);
-        anim.SetBool("isWalking", isWalking);
-        anim.SetBool("isUpWalking", isUpWalking);
-        anim.SetBool("isDownWalking", isDownWalking);
+        else
+        {
+            if(isWalking)
+            {
+                anim.SetBool("isSideIdle", true);
+            }
+            else if(isUpWalking)
+            {
+                anim.SetBool("isUpIdle", true);
+            }
+            else if(isDownWalking)
+            {
+                anim.SetBool("isDownIdle", true);
+            }
+            else
+            {
+                anim.SetBool("isSideBow", isSideBow);
+                anim.SetBool("isDownBow", isDownBow);
+                anim.SetBool("isUpBow", isUpBow);
+                anim.SetBool("isIdle", isIdle);
+                anim.SetBool("isDownIdle", isDownIdle);
+                anim.SetBool("isUpIdle", isUpIdle);
+                anim.SetBool("isSideIdle", isSideIdle);
+                anim.SetBool("isWalking", isWalking);
+                anim.SetBool("isUpWalking", isUpWalking);
+                anim.SetBool("isDownWalking", isDownWalking);
+            }
+        }
+
     }
 }

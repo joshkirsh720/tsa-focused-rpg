@@ -8,6 +8,7 @@ public class Playerbadges : MonoBehaviour
 
     public PlayerText text;
     public BoxCollider2D box;
+    public int amountbadges = 0;
     public class badge
     {
         public static List<badge> badges = new List<badge>();
@@ -65,6 +66,7 @@ public class Playerbadges : MonoBehaviour
                 {
                     badges[count].unlocked = true;
                     StartCoroutine(text.print(badges[count].name + " Unlocked!", .9f));
+                    amountbadges++;
                 }
                 else if (badges[count].unlocked == true)
                 {
