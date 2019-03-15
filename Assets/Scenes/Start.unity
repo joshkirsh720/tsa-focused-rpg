@@ -902,6 +902,11 @@ PrefabInstance:
       propertyPath: waitTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5928078305834237541, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: m_Offset.y
@@ -932,11 +937,6 @@ PrefabInstance:
       propertyPath: box
       value: 
       objectReference: {fileID: 743267963}
-    - target: {fileID: 5928078305834237541, guid: 966e3e2ac90144c4c8a0813f814fa01b,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8299825069530853525, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: text
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
