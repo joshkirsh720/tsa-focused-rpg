@@ -43,8 +43,8 @@ public class PlayerText : MonoBehaviour
                 Tmptxt.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
                 currentCharacter = (currentCharacter + 1);
 
-                yield return new WaitForSeconds(0.05f);
-                Debug.Log(characterCount);
+                yield return new WaitForSeconds(0.03f);
+               
             }
             /*for (int x = 0; x < textf; x++)
             {
