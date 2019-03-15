@@ -5517,8 +5517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bx: {fileID: 1761557685}
-  pt: {fileID: 0}
-  pb: {fileID: 0}
 --- !u!1 &1990166107
 GameObject:
   m_ObjectHideFlags: 0
