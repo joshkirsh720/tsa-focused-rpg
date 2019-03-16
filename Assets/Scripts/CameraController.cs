@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform player;
+    public double[] starting = new double[2];
     public float dampening = .3f;
     private Vector3 velocity = Vector3.zero;
     public double rightXbounds;
