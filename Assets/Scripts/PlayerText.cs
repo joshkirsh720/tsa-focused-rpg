@@ -14,8 +14,10 @@ public class PlayerText : MonoBehaviour
     public bool skip;
    
 
-    public IEnumerator print(string text, float time, bool clear = true, bool typewriter = true)
+    public IEnumerator print(string text, float time, bool clear = true, bool typewriter = true, TextAlignmentOptions allign = TextAlignmentOptions.Left)
     {
+        Box.SetActive(true);
+        Tmptxt.alignment = allign;
         skip = false;
         printdone = false;
         Box.SetActive(true);

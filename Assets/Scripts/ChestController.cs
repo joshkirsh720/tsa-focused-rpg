@@ -34,7 +34,7 @@ public class ChestController : MonoBehaviour
 
 
                 }
-                if (Input.GetKeyDown("z") && opened)
+                if (Input.GetKeyDown("z") && opened && nothingrun == false)
                 {
                     StartCoroutine(nothing());
                 }
@@ -70,7 +70,7 @@ public class ChestController : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown("z"))
+                if (Input.GetKeyDown("z") && nothingrun == false)
                 {
                     StartCoroutine(nothing());
                 }
@@ -82,7 +82,7 @@ public class ChestController : MonoBehaviour
     public IEnumerator foundbow()
     {
         bow = true;
-        StartCoroutine(text.print("You have found a bow!", .7f, false));
+        StartCoroutine(text.print("You found a bow! Press Space to use it", .7f,false,true,TMPro.TextAlignmentOptions.Center));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -92,16 +92,7 @@ public class ChestController : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("Press Space to use it.", .7f, false));
-        while (PlayerText.printdone == false)
-        {
-            yield return null;
-        }
-        while (Input.GetKeyDown("z") == false)
-        {
-            yield return null;
-
-        }
+     
         StartCoroutine(text.print("", .0f));
         opened = true;
     }
@@ -109,7 +100,7 @@ public class ChestController : MonoBehaviour
     {
         nothingrun = true;
         bow = true;
-        StartCoroutine(text.print("There is nothing in this chest :(", .7f, false));
+        StartCoroutine(text.print("There is nothing in this chest :(", .7f, false, true, TMPro.TextAlignmentOptions.Center));
         while (PlayerText.printdone == false)
         {
             yield return null;

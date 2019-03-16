@@ -12,6 +12,7 @@ public class mole : MonoBehaviour
     public Playerbadges pb;
     private int introlevel = 0;
     bool zpressed;
+    bool molenotrun;
     void Start()
     {
 
@@ -37,7 +38,7 @@ public class mole : MonoBehaviour
         text = collision.gameObject.GetComponent<PlayerText>();
         player = collision.gameObject.GetComponent<PlayerController>();
         pb = collision.gameObject.GetComponent<Playerbadges>();
-        if (zpressed == true)
+        if (zpressed == true && molenotrun == false)
         {
 
                 StartCoroutine(intro0());
@@ -50,7 +51,7 @@ public class mole : MonoBehaviour
         text = collision.gameObject.GetComponent<PlayerText>();
         player = collision.gameObject.GetComponent<PlayerController>();
         pb = collision.gameObject.GetComponent<Playerbadges>();
-        if (zpressed == true)
+        if (zpressed == true && molenotrun == false)
         {
 
             StartCoroutine(intro0());
@@ -62,10 +63,10 @@ public class mole : MonoBehaviour
     {
 
         //do stuff
-
+        molenotrun = true;
         //wait for space to be pressed
         player.locked = true;
-        StartCoroutine(text.print(" <i>You talk to the mole</i>", .7f, false, false));
+        StartCoroutine(text.print(" <i>You talk to the mole</i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -75,7 +76,7 @@ public class mole : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("You have unlocked " + Playerbadges.amountbadges/3 + " out of 2 badges", .7f, false));
+        StartCoroutine(text.print("You have unlocked " + Playerbadges.amountbadges + " out of 2 badges", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -85,7 +86,7 @@ public class mole : MonoBehaviour
             yield return null;
 
         }
-        if (Playerbadges.amountbadges/3 == 2)
+        if (Playerbadges.amountbadges == 2)
         {
             StartCoroutine(text.print("Wow. That's all of them", .7f, false));
             while (PlayerText.printdone == false)
@@ -110,6 +111,7 @@ public class mole : MonoBehaviour
         }
         StartCoroutine(text.print("", .0f));
         player.locked = false;
+        molenotrun = false;
         //do stuff once space is pressed
         introlevel = 1;
     }

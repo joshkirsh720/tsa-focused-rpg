@@ -75300,6 +75300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tmptxt: {fileID: 1242967398}
   Box: {fileID: 863735198}
+  skip: 0
 --- !u!114 &1234468234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75454,7 +75455,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 258
+  m_textAlignment: 257
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -75909,6 +75910,7 @@ MonoBehaviour:
   text: {fileID: 1737687090}
   opened: 0
   bow: 0
+  nothingrun: 0
 --- !u!1001 &1783071007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77707,6 +77709,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 7362897350803312400, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7362897350803312402, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -77760,11 +77767,6 @@ PrefabInstance:
     - target: {fileID: 7362897350803312402, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7362897350803312400, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
-        type: 3}
-      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

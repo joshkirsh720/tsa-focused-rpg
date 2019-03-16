@@ -35,8 +35,8 @@ public class Playerbadges : MonoBehaviour
 
     }
 
-    public badge rockbadge = new badge("Rock Badge");
-    public badge waterbadge = new badge("Water Badge");
+    public static badge rockbadge = new badge("Rock Badge");
+    public static badge waterbadge = new badge("Water Badge");
     List<badge> badges = new List<badge>();
 
     // Start is called before the first frame update
@@ -67,7 +67,8 @@ public class Playerbadges : MonoBehaviour
 
                     badge.badges[count].unlocked = true;
                     amountbadges++;
-                    StartCoroutine(text.print(badge.badges[count].name + " Unlocked!", .9f));
+                    print(amountbadges);
+                    StartCoroutine(text.print(badge.badges[count].name + " Unlocked!", .9f, true, true, TMPro.TextAlignmentOptions.Center));
                     print(amountbadges);
                 }
 
