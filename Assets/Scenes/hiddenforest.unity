@@ -324,6 +324,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1595592891}
+    - target: {fileID: 2823934940138560125, guid: 704fed046070b456eb8d6e40425f1637,
+        type: 3}
+      propertyPath: starting.Array.data[0]
+      value: 1.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823934940138560125, guid: 704fed046070b456eb8d6e40425f1637,
+        type: 3}
+      propertyPath: starting.Array.data[1]
+      value: 2.623
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 704fed046070b456eb8d6e40425f1637, type: 3}
 --- !u!114 &471761065 stripped
@@ -524,6 +534,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4299685409407273759, guid: 20753c5b65c9f4d9d9df1bdeb1d88f72,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299685409407273759, guid: 20753c5b65c9f4d9d9df1bdeb1d88f72,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4299685409647403520, guid: 20753c5b65c9f4d9d9df1bdeb1d88f72,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -628,16 +648,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4299685409407273759, guid: 20753c5b65c9f4d9d9df1bdeb1d88f72,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4299685409407273759, guid: 20753c5b65c9f4d9d9df1bdeb1d88f72,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20753c5b65c9f4d9d9df1bdeb1d88f72, type: 3}
@@ -53163,15 +53173,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1122555192, guid: 4757a0d732b5685448c99a04015e5a80, type: 3}
-      propertyPath: scene
-      value: Start
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662838171112340250, guid: 4757a0d732b5685448c99a04015e5a80,
-        type: 3}
-      propertyPath: scene
-      value: Start
-      objectReference: {fileID: 0}
     - target: {fileID: 7633313057227248837, guid: 4757a0d732b5685448c99a04015e5a80,
         type: 3}
       propertyPath: m_Offset.x
@@ -53191,6 +53192,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: 1.38996
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662838171112340250, guid: 4757a0d732b5685448c99a04015e5a80,
+        type: 3}
+      propertyPath: scene
+      value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662838171112340250, guid: 4757a0d732b5685448c99a04015e5a80,
+        type: 3}
+      propertyPath: loc
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122555192, guid: 4757a0d732b5685448c99a04015e5a80, type: 3}
+      propertyPath: scene
+      value: Start
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4757a0d732b5685448c99a04015e5a80, type: 3}

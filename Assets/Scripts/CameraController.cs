@@ -16,10 +16,10 @@ public class CameraController : MonoBehaviour
     bool moveToy;
     private void Start()
     {
-        rightXbounds = rightXbounds + transform.position.x;
-        leftXbounds = transform.position.x - leftXbounds;
-        botYbounds = botYbounds + transform.position.y;
-        topYbounds = transform.position.y - topYbounds;
+        rightXbounds = rightXbounds + starting[0];
+        leftXbounds = starting[0] - leftXbounds;
+        botYbounds = botYbounds + starting[1];
+        topYbounds = starting[1] - topYbounds;
     }
   
     // Update is called once per frame
