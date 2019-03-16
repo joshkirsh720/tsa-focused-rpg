@@ -19,9 +19,9 @@ public class PlayerText : MonoBehaviour
         Box.SetActive(true);
         if (typewriter)
         {
-            Tmptxt.ForceMeshUpdate();
+            /*Tmptxt.ForceMeshUpdate();
             int currentCharacter = 0;
-            int textf = text.Length + 1;
+            
             Tmptxt.text = text;
             Tmptxt.color = new Color32(0, 0, 0, 255);
             TMP_TextInfo textInfo = Tmptxt.textInfo;
@@ -45,14 +45,14 @@ public class PlayerText : MonoBehaviour
 
                 yield return new WaitForSeconds(0.03f);
                
-            }
-            /*for (int x = 0; x < textf; x++)
+            }*/
+            int textf = text.Length + 1;
+            for (int x = 0; x < textf; x++)
             {
                 string display = text.Substring(0, x);
                 Tmptxt.text = display;
-                Tmptxt.color = new Color32(51, 51, 255, 255);
-                yield return new WaitForSeconds(.065f);
-            }*/
+                yield return new WaitForSeconds(.05f);
+            }
         }
         else
         {
