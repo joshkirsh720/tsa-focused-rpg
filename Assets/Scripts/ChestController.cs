@@ -7,7 +7,7 @@ public class ChestController : MonoBehaviour
     public PlayerText text;
     public bool opened;
     public bool bow;
-    
+    public bool nothingrun;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,38 +22,105 @@ public class ChestController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+
         if (col.gameObject.tag == "chest")
         {
-            StartCoroutine(text.print("Press Z to open the chest.", 1.5f));
-          
+            if (col.gameObject.name == "BowChest")
+            {
 
+                if (Input.GetKeyDown("z") && !bow)
+                {
+                    StartCoroutine(foundbow());
+
+
+                }
+                if (Input.GetKeyDown("z") && opened)
+                {
+                    StartCoroutine(nothing());
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown("z") && nothingrun == false)
+                {
+                    StartCoroutine(nothing());
+                }
+            }
         }
-
     }
 
     void OnCollisionStay2D(Collision2D col)
     {
-        if (col.gameObject.name == "BowChest")
-        {
 
-            if (Input.GetKeyDown("z") && !bow)
+        if (col.gameObject.tag == "chest")
+        {
+            if (col.gameObject.name == "BowChest")
             {
-                StartCoroutine(text.print("You have found a bow! Press Space to use it.", 1.5f));
-                bow = true;
+
+                if (Input.GetKeyDown("z") && !bow)
+                {
+                    StartCoroutine(foundbow());
+
+
+                }
+                if (Input.GetKeyDown("z") && opened && nothingrun == false)
+                {
+                    StartCoroutine(nothing());
+                }
             }
-            else if(Input.GetKeyDown("z") && opened)
+            else
             {
-                StartCoroutine(text.print("There is nothing left in the chest.", 1.5f));
+                if (Input.GetKeyDown("z"))
+                {
+                    StartCoroutine(nothing());
+                }
             }
         }
     }
 
-    void OnCollisionExit2D(Collision2D col)
+
+    public IEnumerator foundbow()
     {
-        if (col.gameObject.tag == "chest")
+        bow = true;
+        StartCoroutine(text.print("You have found a bow!", .7f, false));
+        while (PlayerText.printdone == false)
         {
-            print("opened");
-            opened = true;
+            yield return null;
         }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("Press Space to use it.", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("", .0f));
+        opened = true;
+    }
+    public IEnumerator nothing()
+    {
+        nothingrun = true;
+        bow = true;
+        StartCoroutine(text.print("There is nothing in this chest :(", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+       
+        StartCoroutine(text.print("", .0f));
+        nothingrun = false;
     }
 }
