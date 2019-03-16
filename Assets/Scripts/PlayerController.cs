@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public int amountofkeys;
     public ChestController chestController;
     public bool locked;
+    public static int lastloc;
 
     // Start is called before the first frame update
     void Start()

@@ -9,10 +9,11 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     public BoxCollider2D Box;
     public string scene;
-
+    public int loc;
+    public PlayerController pc;
     void Start()
     {
-        GameObject Player = GameObject.Find("Player");
+
     }
 
     // Update is called once per frame
@@ -22,6 +23,9 @@ public class SceneLoader : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D col)
     {
+        PlayerController.lastloc = loc;
         SceneManager.LoadScene(scene);
+       
+
     }
 }
