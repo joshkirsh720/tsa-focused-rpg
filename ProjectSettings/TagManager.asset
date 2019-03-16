@@ -6,6 +6,7 @@ TagManager:
   tags:
   - badge
   - chest
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public int currentstate;
     public float timefromattack;
-    public float waitTime = 1.0f;
+    public float waitTime = 1.5f;
     public float xVel;
     public float yVel;
     public int xSign, ySign;
@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     public ChestController chestController;
     public bool locked;
     public static int lastloc;
+
+
+    public Rigidbody2D arrow;
+    public int arrowSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -101,29 +105,41 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-       
 
-        if(Input.GetKey("space") && chestController.bow)
-        {
-            if (currentstate == 1)
-            {
-                isSideBow = true;
-            }
-            else if (currentstate == 2)
-            {
-                isUpBow = true;
-            }
-            else if (currentstate == 3)
-            {
-                isDownBow = true;
-            }
-            timefromattack = Time.time;
-        }
-        if((Time.time -timefromattack) < waitTime && chestController.bow)
+        if ((Time.time - timefromattack) < waitTime && chestController.bow)
         {
             xVel = 0;
             yVel = 0;
 
+        }
+        else if (Input.GetKey("space") && chestController.bow) { 
+        
+            if (currentstate == 1)
+            {
+                Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(transform.localScale.x * .2f, 0, 0), transform.rotation);
+                clone.gameObject.SetActive(true);
+                clone.velocity = new Vector3(transform.localScale.x * arrowSpeed, 0, 0);
+                clone.transform.Rotate(0,0,transform.localScale.x * -90);
+                
+                
+                isSideBow = true;
+            }
+            else if (currentstate == 2)
+            {
+                Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(0, .2f, 0), transform.rotation);
+                clone.gameObject.SetActive(true);
+                clone.velocity = new Vector3(0, arrowSpeed, 0);
+                isUpBow = true;
+            }
+            else if (currentstate == 3)
+            {
+                Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(0, -.25f, 0), transform.rotation);
+                clone.gameObject.SetActive(true);
+                clone.velocity = new Vector3(0, -arrowSpeed, 0);
+                clone.transform.Rotate(0, 0, 180);
+                isDownBow = true;
+            }
+            timefromattack = Time.time;
         }
 
         //set x and y signs to keep track of which direction the player is facing
