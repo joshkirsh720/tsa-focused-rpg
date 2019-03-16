@@ -66,14 +66,20 @@ public class mole : MonoBehaviour
         //wait for space to be pressed
         player.locked = true;
         StartCoroutine(text.print(" <i>You talk to the mole</i>", .7f, false, false));
-        yield return new WaitForSeconds(.5f);
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
         while (Input.GetKeyDown("z") == false)
         {
             yield return null;
 
         }
         StartCoroutine(text.print("You have unlocked " + Playerbadges.amountbadges/3 + " out of 2 badges", .7f, false));
-        yield return new WaitForSeconds(.5f);
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
         while (Input.GetKeyDown("z") == false)
         {
             yield return null;
@@ -82,13 +88,20 @@ public class mole : MonoBehaviour
         if (Playerbadges.amountbadges/3 == 2)
         {
             StartCoroutine(text.print("Wow. That's all of them", .7f, false));
-            yield return new WaitForSeconds(.5f);
+            while (PlayerText.printdone == false)
+            {
+                yield return null;
+            }
             while (Input.GetKeyDown("z") == false)
             {
                 yield return null;
 
             }
             StartCoroutine(text.print("You should go to the hidden door in the dungeon", .5f, false));
+            while (PlayerText.printdone == false)
+            {
+                yield return null;
+            }
             while (Input.GetKeyDown("z") == false)
             {
                 yield return null;

@@ -10,12 +10,14 @@ public class PlayerText : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI Tmptxt;
     public GameObject Box;
-   
-
+    public static bool printdone;
+    public bool skip;
    
 
     public IEnumerator print(string text, float time, bool clear = true, bool typewriter = true)
     {
+        skip = false;
+        printdone = false;
         Box.SetActive(true);
         if (typewriter)
         {
@@ -51,12 +53,22 @@ public class PlayerText : MonoBehaviour
             {
                 string display = text.Substring(0, x);
                 Tmptxt.text = display;
+              
                 yield return new WaitForSeconds(.05f);
+                if(skip == true)
+                {
+
+                    Tmptxt.text = text;
+                    break;
+                }
+
             }
+            printdone = true;
         }
         else
         {
             Tmptxt.text = text;
+            printdone = true;
         }
         if (clear)
         {
@@ -66,5 +78,12 @@ public class PlayerText : MonoBehaviour
         }
 
     }
-
+     void Update()
+    {
+        if (Input.GetKeyDown("z") == true)
+        {
+            skip = true;
+        }
     }
+
+}

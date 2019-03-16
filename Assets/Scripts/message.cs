@@ -80,23 +80,35 @@ public class message : MonoBehaviour
         //do stuff
 
         //wait for space to be pressed
+      
         player.locked = true;
         StartCoroutine(text.print(" <i>You talk to the messenger</i>", .7f, false, false));
-        yield return new WaitForSeconds(.5f);
+        print("kil");
+        while(PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+       
         while (Input.GetKeyDown("z") == false)
         {
             yield return null;
 
         }
         StartCoroutine(text.print("Hey those caves up there are pretty cool huh", .7f, false));
-        yield return new WaitForSeconds(.5f);
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
         while (Input.GetKeyDown("z") == false)
         {
             yield return null;
 
         }
         StartCoroutine(text.print("I just saw a bunch of trolls go in there", .7f, false));
-        yield return new WaitForSeconds(.5f);
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
         while (Input.GetKeyDown("z") == false)
         {
             yield return null;
@@ -105,8 +117,9 @@ public class message : MonoBehaviour
 
         StartCoroutine(text.print("", .0f));
         player.locked = false;
-        //do stuff once space is pressed
         introlevel = 1;
+        //do stuff once space is pressed
+
     }
 
     public IEnumerator intro1()
@@ -114,7 +127,10 @@ public class message : MonoBehaviour
         player.locked = true;
 
         StartCoroutine(text.print("They seemed like they were in a hurry", .7f, false));
-        yield return new WaitForSeconds(.5f);
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
         while (Input.GetKeyDown("z") == false)
         {
             yield return null;
