@@ -102,9 +102,10 @@ public class sign : MonoBehaviour
        
 
         StartCoroutine(text.print("", .0f));
+        signrun = false;
         player.locked = false;
         introlevel = 1;
-        signrun = false;
+      
         //do stuff once space is pressed
 
     }

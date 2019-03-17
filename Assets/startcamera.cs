@@ -19,6 +19,12 @@ public class startcamera : MonoBehaviour
             cam.position = new Vector3(-1.026f, -2.939898f, -10);
             player.position = new Vector3(-1.026f, -3.521998f, -1);
         }
+        if (PlayerController.lastloc == 3)
+        {
+            cam.position = new Vector3(251.0653f, 184.2704f, -10);
+            player.position = new Vector3(252.5896f, 184.2332f, -1);
+        }
+
     }
 
     // Update is called once per frame

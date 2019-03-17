@@ -130,7 +130,14 @@ MonoBehaviour:
   xSign: 0
   ySign: 0
   amountofkeys: 0
-  chestController: {fileID: 8299825069530853525}
+  locked: 0
+  arrow: {fileID: 0}
+  arrowSpeed: 1
+  hitDistance: 0.5
+  hitRadius: 0.5
+  knockbackForce: 100
+  attackDelay: 1
+  hitDamage: 2
 --- !u!61 &5928078305834237542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -203,8 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 6048906578442850412}
-  opened: 0
-  bow: 0
+  nothingrun: 0
 --- !u!114 &6048906578442850412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,3 +225,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tmptxt: {fileID: 0}
   Box: {fileID: 0}
+  skip: 0

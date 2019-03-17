@@ -23,9 +23,11 @@ public class SceneLoader : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D col)
     {
-        PlayerController.lastloc = loc;
-        SceneManager.LoadScene(scene);
-       
+        if (col.gameObject.name == "Player")
+        {
+            PlayerController.lastloc = loc;
+            SceneManager.LoadScene(scene);
+        }
 
     }
 }
