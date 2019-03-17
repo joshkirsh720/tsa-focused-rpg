@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D arrow;
     public int arrowSpeed;
     public float hitDistance, hitRadius, knockbackForce, attackDelay;
-    private float lastAttackTime;
+    private float lastAttackTime = -2;
     public int hitDamage;
 
 
@@ -82,7 +82,9 @@ public class PlayerController : MonoBehaviour
         bool isSideBow = false;
         bool isDownBow = false;
         bool isUpBow = false;
-
+        bool punchup = false;
+        bool punchdown = false;
+        bool punchside = false;
 
         if (Input.GetKey(KeyCode.UpArrow)) yVel = speed;
         if (Input.GetKey(KeyCode.DownArrow)) yVel = -speed;
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if ((Time.time - timefromattack) < waitTime && ChestController.bow)
+        if ((Time.time - timefromattack) < waitTime && ChestController.bow || (Time.time - lastAttackTime) < attackDelay)
         {
             xVel = 0;
             yVel = 0;
@@ -162,22 +164,26 @@ public class PlayerController : MonoBehaviour
         }
         else if(Input.GetKey("x") && Time.time - lastAttackTime > attackDelay)
         {
+            print("attack");
             var hitLocation = transform.position;
             Vector2 knockbackVector = new Vector2();
             if(currentstate == 1)
             {
                 hitLocation += new Vector3(transform.localScale.x * hitDistance, 0);
-                knockbackVector.x = transform.localScale.x * knockbackForce;
+                knockbackVector.x = transform.localScale.x * knockbackForce * 5;
+                punchside = true;
             }
             else if(currentstate == 2)
             {
                 hitLocation += new Vector3(0, hitDistance);
-                knockbackVector.y = knockbackForce;
+                knockbackVector.y = knockbackForce * 5;
+                punchup = true;
             }
             else if(currentstate == 3)
             {
                 hitLocation += new Vector3(0, -hitDistance);
-                knockbackVector.y = knockbackForce;
+                knockbackVector.y = knockbackForce * 5;
+                punchdown = true;
             }
 
             var hit = Physics2D.OverlapCircleAll(hitLocation, hitRadius);
@@ -195,13 +201,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //set x and y signs to keep track of which direction the player is facing
-        if(xVel != 0 || yVel != 0)
-        {
-            xSign = Math.Sign(xVel);
-            ySign = Math.Sign(yVel);
-
-        
-        }
+       
 
         //Debug.Log("xSign: " + xSign + " ySign: " + ySign);
         //Debug.Log("xVel: " + xVel + " yVel: " + yVel);
@@ -222,7 +222,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if(isWalking)
+            rb.velocity = new Vector2(0, 0);
+            if (isWalking)
             {
                 anim.SetBool("isSideIdle", true);
             }

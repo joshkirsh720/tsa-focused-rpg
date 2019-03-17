@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/hiddenforest.unity
     guid: 6a5067692775743ed9b53abb619f41b0
+  - enabled: 1
+    path: Assets/hallway.unity
+    guid: 150e24177d3b44bd0b9b0f212dceeca7
   m_configObjects: {}
