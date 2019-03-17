@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float yVel;
     public int xSign, ySign;
     public int amountofkeys;
-    public ChestController chestController;
+ 
     public bool locked;
     public static int lastloc;
 
@@ -110,13 +110,13 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if ((Time.time - timefromattack) < waitTime && chestController.bow)
+        if ((Time.time - timefromattack) < waitTime && ChestController.bow)
         {
             xVel = 0;
             yVel = 0;
 
         }
-        else if (Input.GetKey("space") && chestController.bow) { 
+        else if (Input.GetKey("space") && ChestController.bow) { 
         
             if (currentstate == 1)
             {

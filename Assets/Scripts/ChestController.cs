@@ -5,8 +5,8 @@ using UnityEngine;
 public class ChestController : MonoBehaviour
 {
     public PlayerText text;
-    public bool opened;
-    public bool bow;
+    public static bool opened;
+    public static bool bow;
     public bool nothingrun;
     // Start is called before the first frame update
     void Start()
