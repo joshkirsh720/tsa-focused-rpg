@@ -26,12 +26,17 @@ public class PlayerController : MonoBehaviour
     private float lastAttackTime = -2;
     public int hitDamage;
 
+    public int health = 3;
+
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
 
     // Start is called before the first frame update
     public IEnumerator shootside()
     {
         yield return new WaitForSeconds(.5f);
-        Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(transform.localScale.x * .2f, 0, 0), transform.rotation);
+        Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(transform.localScale.x * .2f, -.05f, 0), transform.rotation);
         clone.gameObject.SetActive(true);
         clone.velocity = new Vector3(transform.localScale.x * arrowSpeed, 0, 0);
         clone.transform.Rotate(0, 0, transform.localScale.x * -90);
@@ -61,7 +66,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(health);
     }
 
     void FixedUpdate()
@@ -250,5 +255,48 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        UpdateHearts();
+        if (!IsAlive()) Die();
+    }
+    public bool IsAlive()
+    {
+        return health > 0;
+    }
+    private void Die()
+    {
+        //replace with some cool death code idk
+        this.gameObject.SetActive(false);
+    }
+    private void UpdateHearts()
+    {
+        if(health == 0)
+        {
+            heart1.SetActive(false);
+            heart2.SetActive(false);
+            heart3.SetActive(false);
+        }
+        else if (health == 1)
+        {
+            heart1.SetActive(true);
+            heart2.SetActive(false);
+            heart3.SetActive(false);
+        }
+        else if (health == 2)
+        {
+            heart1.SetActive(true);
+            heart2.SetActive(true);
+            heart3.SetActive(false);
+        }
+        else
+        {
+            heart1.SetActive(true);
+            heart2.SetActive(true);
+            heart3.SetActive(true);
+        }
     }
 }

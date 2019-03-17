@@ -10,11 +10,12 @@ public class EnemyController : MonoBehaviour
     private float forceAmount;
     public float enemySpeed;
     public GameObject player;
+    public float attackRadius;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("Attack");
     }
 
     // Update is called once per frame
@@ -41,6 +42,22 @@ public class EnemyController : MonoBehaviour
         rb.AddForce(force);
     }
 
+    IEnumerator Attack()
+    {
+        while (true)
+        {
+            foreach(var thing in Physics2D.OverlapCircleAll(transform.position, attackRadius))
+            {
+                if (thing.gameObject.tag == "Player")
+                {
+                    thing.gameObject.GetComponent<PlayerController>().TakeDamage(1);
+                }
+                else continue;
+            }
+
+            yield return new WaitForSeconds(2);
+        }
+    }
 
 
     bool IsAlive()
