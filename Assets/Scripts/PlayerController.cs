@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D arrow;
     public int arrowSpeed;
+    public float hitDistance, hitRadius, knockbackForce, attackDelay;
+    private float lastAttackTime;
+    public int hitDamage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -140,6 +144,39 @@ public class PlayerController : MonoBehaviour
                 isDownBow = true;
             }
             timefromattack = Time.time;
+        }
+        else if(Input.GetKey("x") && Time.time - lastAttackTime > attackDelay)
+        {
+            var hitLocation = transform.position;
+            Vector2 knockbackVector = new Vector2();
+            if(currentstate == 1)
+            {
+                hitLocation += new Vector3(transform.localScale.x * hitDistance, 0);
+                knockbackVector.x = transform.localScale.x * knockbackForce;
+            }
+            else if(currentstate == 2)
+            {
+                hitLocation += new Vector3(0, hitDistance);
+                knockbackVector.y = knockbackForce;
+            }
+            else if(currentstate == 3)
+            {
+                hitLocation += new Vector3(0, -hitDistance);
+                knockbackVector.y = knockbackForce;
+            }
+
+            var hit = Physics2D.OverlapCircleAll(hitLocation, hitRadius);
+            foreach(var collision in hit)
+            {
+                if(collision.gameObject.tag == "Enemy")
+                {
+                    var enemy = collision.gameObject.GetComponent<EnemyController>();
+                    enemy.TakeDamage(hitDamage);
+                    enemy.AddKnockback(knockbackVector);
+                }
+            }
+
+            lastAttackTime = Time.time;
         }
 
         //set x and y signs to keep track of which direction the player is facing
