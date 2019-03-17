@@ -74784,32 +74784,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &684722523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7362897350803312407, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7362897351211206220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &684722524 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7362897350803312400, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
     type: 3}
   m_PrefabInstance: {fileID: 7362897351211206220}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &684722528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684722523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f52a4d41014a408ab4fcc8e1ccf99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 684722524}
-  knockback: 100
 --- !u!1 &799239915
 GameObject:
   m_ObjectHideFlags: 0
@@ -75933,8 +75913,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1737687090}
-  opened: 0
-  bow: 0
   nothingrun: 0
 --- !u!1001 &1783071007
 PrefabInstance:
@@ -77749,11 +77727,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 7362897350803312400, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7362897350803312402, guid: 4d7a75bfc15801a45a46bac57b73bdcd,
         type: 3}
