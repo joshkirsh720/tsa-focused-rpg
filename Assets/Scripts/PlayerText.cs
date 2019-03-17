@@ -56,7 +56,7 @@ public class PlayerText : MonoBehaviour
                 string display = text.Substring(0, x);
                 Tmptxt.text = display;
               
-                yield return new WaitForSeconds(.05f);
+                yield return new WaitForSeconds(.03f);
                 if(skip == true)
                 {
 

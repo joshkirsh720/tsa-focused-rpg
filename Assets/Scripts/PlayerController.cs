@@ -28,6 +28,29 @@ public class PlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
+    public IEnumerator shootside()
+    {
+        yield return new WaitForSeconds(.5f);
+        Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(transform.localScale.x * .2f, 0, 0), transform.rotation);
+        clone.gameObject.SetActive(true);
+        clone.velocity = new Vector3(transform.localScale.x * arrowSpeed, 0, 0);
+        clone.transform.Rotate(0, 0, transform.localScale.x * -90);
+    }
+    public IEnumerator shootup()
+    {
+        yield return new WaitForSeconds(.5f);
+        Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(0, .2f, 0), transform.rotation);
+        clone.gameObject.SetActive(true);
+        clone.velocity = new Vector3(0, arrowSpeed, 0);
+    }
+    public IEnumerator shootdown()
+    {
+        yield return new WaitForSeconds(.5f);
+        Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(0, -.27f, 0), transform.rotation);
+        clone.gameObject.SetActive(true);
+        clone.velocity = new Vector3(0, -arrowSpeed, 0);
+        clone.transform.Rotate(0, 0, 180);
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -120,27 +143,19 @@ public class PlayerController : MonoBehaviour
         
             if (currentstate == 1)
             {
-                Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(transform.localScale.x * .2f, 0, 0), transform.rotation);
-                clone.gameObject.SetActive(true);
-                clone.velocity = new Vector3(transform.localScale.x * arrowSpeed, 0, 0);
-                clone.transform.Rotate(0,0,transform.localScale.x * -90);
+                StartCoroutine(shootside());
                 
                 
                 isSideBow = true;
             }
             else if (currentstate == 2)
             {
-                Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(0, .2f, 0), transform.rotation);
-                clone.gameObject.SetActive(true);
-                clone.velocity = new Vector3(0, arrowSpeed, 0);
+                StartCoroutine(shootup());
                 isUpBow = true;
             }
             else if (currentstate == 3)
             {
-                Rigidbody2D clone = Instantiate(arrow, transform.position + new Vector3(0, -.25f, 0), transform.rotation);
-                clone.gameObject.SetActive(true);
-                clone.velocity = new Vector3(0, -arrowSpeed, 0);
-                clone.transform.Rotate(0, 0, 180);
+                StartCoroutine(shootdown());
                 isDownBow = true;
             }
             timefromattack = Time.time;
