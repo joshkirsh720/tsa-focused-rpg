@@ -87,9 +87,9 @@ public class PlayerController : MonoBehaviour
         bool isSideBow = false;
         bool isDownBow = false;
         bool isUpBow = false;
-        bool punchup = false;
-        bool punchdown = false;
-        bool punchside = false;
+        bool isSidePunch = false;
+        bool isUpPunch = false;
+        bool isDownPunch = false;
 
         if (Input.GetKey(KeyCode.UpArrow)) yVel = speed;
         if (Input.GetKey(KeyCode.DownArrow)) yVel = -speed;
@@ -151,8 +151,6 @@ public class PlayerController : MonoBehaviour
             if (currentstate == 1)
             {
                 StartCoroutine(shootside());
-                
-                
                 isSideBow = true;
             }
             else if (currentstate == 2)
@@ -176,19 +174,19 @@ public class PlayerController : MonoBehaviour
             {
                 hitLocation += new Vector3(transform.localScale.x * hitDistance, 0);
                 knockbackVector.x = transform.localScale.x * knockbackForce * 5;
-                punchside = true;
+                isSidePunch = true;
             }
             else if(currentstate == 2)
             {
                 hitLocation += new Vector3(0, hitDistance);
                 knockbackVector.y = knockbackForce * 5;
-                punchup = true;
+                isUpPunch = true;
             }
             else if(currentstate == 3)
             {
                 hitLocation += new Vector3(0, -hitDistance);
                 knockbackVector.y = knockbackForce * 5;
-                punchdown = true;
+                isDownPunch = true;
             }
 
             var hit = Physics2D.OverlapCircleAll(hitLocation, hitRadius);
@@ -217,6 +215,9 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isSideBow", isSideBow);
             anim.SetBool("isDownBow", isDownBow);
             anim.SetBool("isUpBow", isUpBow);
+            anim.SetBool("isSidePunch", isSidePunch);
+            anim.SetBool("isDownPunch", isDownPunch);
+            anim.SetBool("isUpPunch", isUpPunch);
             anim.SetBool("isIdle", isIdle);
             anim.SetBool("isDownIdle", isDownIdle);
             anim.SetBool("isUpIdle", isUpIdle);
@@ -245,6 +246,9 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isSideBow", isSideBow);
                 anim.SetBool("isDownBow", isDownBow);
                 anim.SetBool("isUpBow", isUpBow);
+                anim.SetBool("isSidePunch", isSidePunch);
+                anim.SetBool("isDownPunch", isDownPunch);
+                anim.SetBool("isUpPunch", isUpPunch);
                 anim.SetBool("isIdle", isIdle);
                 anim.SetBool("isDownIdle", isDownIdle);
                 anim.SetBool("isUpIdle", isUpIdle);
