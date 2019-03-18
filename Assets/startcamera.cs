@@ -7,6 +7,7 @@ public class startcamera : MonoBehaviour
     // Start is called before the first frame update
     public Transform player;
     public Transform cam;
+    public bool fight = false;
     void Start()
     {
         if(PlayerController.lastloc == 1)
@@ -19,11 +20,12 @@ public class startcamera : MonoBehaviour
             cam.position = new Vector3(-1.026f, -2.939898f, -10);
             player.position = new Vector3(-1.026f, -3.521998f, -1);
         }
-        if (PlayerController.lastloc == 3)
+        if (PlayerController.lastloc == 3 && fight == false)
         {
             cam.position = new Vector3(251.0653f, 184.2704f, -10);
             player.position = new Vector3(252.5896f, 184.2332f, -1);
         }
+      
 
     }
 

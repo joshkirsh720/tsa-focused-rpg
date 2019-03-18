@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float yVel;
     public int xSign, ySign;
     public int amountofkeys;
- 
+    public bool haskey;
     public bool locked;
     public static int lastloc;
 
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(health);
+
     }
 
     void FixedUpdate()
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if ((Time.time - timefromattack) < waitTime && ChestController.bow || (Time.time - lastAttackTime) < attackDelay)
+        if ((Time.time - timefromattack) < waitTime && ChestController.bow)
         {
             xVel = 0;
             yVel = 0;

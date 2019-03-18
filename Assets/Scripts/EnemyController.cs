@@ -11,20 +11,26 @@ public class EnemyController : MonoBehaviour
     public float enemySpeed;
     public GameObject player;
     public float attackRadius;
-
+    public bool start = false;
+    public Rigidbody2D prized;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("Attack");
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         //follow player
-        int xSign = Math.Sign(player.transform.position.x - transform.position.x);
+        if (start)
+        {
+            int xSign = Math.Sign(player.transform.position.x - transform.position.x);
         int ySign = Math.Sign(player.transform.position.y - transform.position.y);
         rb.velocity = new Vector2(xSign * enemySpeed, ySign * enemySpeed);
+       
+            StartCoroutine("Attack");
+        }
     }
 
     public void TakeDamage(int damage)
@@ -44,6 +50,7 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator Attack()
     {
+
         while (true)
         {
             foreach(var thing in Physics2D.OverlapCircleAll(transform.position, attackRadius))
@@ -67,5 +74,12 @@ public class EnemyController : MonoBehaviour
     void Die()
     {
         Destroy(this.gameObject);
+        prize(prized);
+    }
+    void prize(Rigidbody2D prized)
+    {
+        Rigidbody2D clone = Instantiate(prized, transform.position + new Vector3(transform.localScale.x * .2f, -.05f, 0), transform.rotation);
+        prized.gameObject.GetComponent<key>().spawntime = Time.time;
+        clone.gameObject.SetActive(true);
     }
 }

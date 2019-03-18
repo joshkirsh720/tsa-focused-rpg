@@ -138,6 +138,10 @@ MonoBehaviour:
   knockbackForce: 100
   attackDelay: 1
   hitDamage: 2
+  health: 3
+  heart1: {fileID: 0}
+  heart2: {fileID: 0}
+  heart3: {fileID: 0}
 --- !u!61 &5928078305834237542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0016149282, y: -0.03939563}
+  m_Offset: {x: 0.0014434755, y: -0.06250358}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.091549635, y: 0.1384033}
+  m_Size: {x: 0.05824703, y: 0.04869008}
   m_EdgeRadius: 0
 --- !u!95 &1270441837
 Animator:
