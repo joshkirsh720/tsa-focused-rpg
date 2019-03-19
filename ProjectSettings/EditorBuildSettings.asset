@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/finalbattle.unity
     guid: 02a7e85054b98482aa60fb3b6532eee7
+  - enabled: 1
+    path: Assets/king.unity
+    guid: 77d7fe3936b394f128e66d0d9a52e4e9
   m_configObjects: {}

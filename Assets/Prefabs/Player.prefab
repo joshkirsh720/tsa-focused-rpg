@@ -130,7 +130,10 @@ MonoBehaviour:
   xSign: 0
   ySign: 0
   amountofkeys: 0
+  haskey: 0
   locked: 0
+  text: {fileID: 6048906578442850412}
+  deadg: 0
   arrow: {fileID: 0}
   arrowSpeed: 1
   hitDistance: 0.5

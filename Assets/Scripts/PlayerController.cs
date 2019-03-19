@@ -269,6 +269,7 @@ public class PlayerController : MonoBehaviour
 
         //replace with some cool death code idk
         deadg = true;
+        this.gameObject.transform.position = new Vector3(0, 0, 0);
         StartCoroutine(dead());
 
     }
@@ -306,7 +307,7 @@ public class PlayerController : MonoBehaviour
     {
         
         print("dead");
-        StartCoroutine(text.print(" <i>You Died </i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        StartCoroutine(text.print(" You Died. Press Z to respawn", .7f, false, false, TMPro.TextAlignmentOptions.Center));
         print("kil");
         while (PlayerText.printdone == false)
         {
@@ -318,32 +319,29 @@ public class PlayerController : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print(" <i>Press Z to respawn </i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
-        print("kil");
-        while (PlayerText.printdone == false)
-        {
-            yield return null;
-        }
-
-        while (Input.GetKeyDown("z") == false)
-        {
-            yield return null;
-
-        }
-
+        print("done");
+       
         StartCoroutine(text.print("", .0f));
         text.Box.SetActive(false);
         if (PlayerController.lastloc == 1)
         {
+            PlayerController.lastloc = 0;
             SceneManager.LoadScene("Dungeon");
         }
-        if (PlayerController.lastloc == 2)
+        else if (PlayerController.lastloc == 2)
         {
+            PlayerController.lastloc = 0;
             SceneManager.LoadScene("hallway");
         }
-        if (PlayerController.lastloc == 3)
+        else if (PlayerController.lastloc == 3)
         {
+            PlayerController.lastloc = 0;
             SceneManager.LoadScene("fight");
+        }
+        else
+        {
+            PlayerController.lastloc = 0;
+            SceneManager.LoadScene("doublefight");
         }
     }
 }
