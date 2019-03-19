@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class PlayerController : MonoBehaviour
     public bool haskey;
     public bool locked;
     public static int lastloc;
-
-
+    public PlayerText text;
+    public bool deadg;
     public Rigidbody2D arrow;
     public int arrowSpeed;
     public float hitDistance, hitRadius, knockbackForce, attackDelay;
@@ -181,7 +182,7 @@ public class PlayerController : MonoBehaviour
                 var hit = Physics2D.OverlapCircleAll(hitLocation, hitRadius);
                 foreach (var collision in hit)
                 {
-                    if (collision.gameObject.tag == "Enemy")
+                    if (collision.gameObject.tag == "Enemy" && collision.gameObject.name != "Boss")
                     {
                         var enemy = collision.gameObject.GetComponent<EnemyController>();
                         enemy.TakeDamage(hitDamage);
@@ -198,8 +199,8 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log("xSign: " + xSign + " ySign: " + ySign);
         //Debug.Log("xVel: " + xVel + " yVel: " + yVel);
-     
-        if (locked == false)
+
+        if (locked == false && deadg == false)
         {
             rb.velocity = new Vector2(xVel, yVel);
             anim.SetBool("isSidePunch", isSidePunch);
@@ -250,6 +251,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+
     }
 
     public void TakeDamage(int damage)
@@ -264,8 +266,11 @@ public class PlayerController : MonoBehaviour
     }
     private void Die()
     {
+
         //replace with some cool death code idk
-        this.gameObject.SetActive(false);
+        deadg = true;
+        StartCoroutine(dead());
+
     }
     private void UpdateHearts()
     {
@@ -274,6 +279,8 @@ public class PlayerController : MonoBehaviour
             heart1.SetActive(false);
             heart2.SetActive(false);
             heart3.SetActive(false);
+           
+        
         }
         else if (health == 1)
         {
@@ -292,6 +299,51 @@ public class PlayerController : MonoBehaviour
             heart1.SetActive(true);
             heart2.SetActive(true);
             heart3.SetActive(true);
+        }
+    }
+
+    public IEnumerator dead()
+    {
+        
+        print("dead");
+        StartCoroutine(text.print(" <i>You Died </i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        print("kil");
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print(" <i>Press Z to respawn </i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        print("kil");
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+
+        StartCoroutine(text.print("", .0f));
+        text.Box.SetActive(false);
+        if (PlayerController.lastloc == 1)
+        {
+            SceneManager.LoadScene("Dungeon");
+        }
+        if (PlayerController.lastloc == 2)
+        {
+            SceneManager.LoadScene("hallway");
+        }
+        if (PlayerController.lastloc == 3)
+        {
+            SceneManager.LoadScene("fight");
         }
     }
 }

@@ -9,6 +9,7 @@ public class key : MonoBehaviour
     public double spawntime;
     public PlayerText text;
     public PlayerController player;
+    public string item = "key";
     void Start()
     {
         
@@ -39,7 +40,7 @@ public class key : MonoBehaviour
         //wait for space to be pressed
 
         player.locked = true;
-        StartCoroutine(text.print(" <i>You found a key</i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        StartCoroutine(text.print(" <i>You found a </i>" + item , .7f, false, false, TMPro.TextAlignmentOptions.Center));
         print("kil");
         while (PlayerText.printdone == false)
         {

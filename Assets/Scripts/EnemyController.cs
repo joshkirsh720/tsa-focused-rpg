@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(health);
         //follow player
         if (start)
         {
@@ -72,6 +73,7 @@ public class EnemyController : MonoBehaviour
     }
     void Die()
     {
+        print("dead");
         Destroy(this.gameObject);
         prize(prized);
     }

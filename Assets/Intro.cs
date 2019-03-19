@@ -51,7 +51,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("Your king Vlad has used a secret magical object for ages to maintain his just and fair rule over the kingdom.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft)); 
+        StartCoroutine(text.print("Your king has used a secret magical object for ages to maintain his rule over the kingdom.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft)); 
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -61,7 +61,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("However, just a couple of hours ago, your king’s main rival somehow managed to get into the castle and steal the object.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("However, The evil tree ruler has somehow managed to get into the castle and steal the object.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -71,7 +71,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("Now, he will gain the immense power from the badge and will finally able to fight and most likely defeat the rightful ruler, your king.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("Now, he will gain the immense power from the badge and will finally able to take over the world.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -91,7 +91,16 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("Good luck!", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("The tree king was last spotted fleeing into the caves up north", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+        }
+        StartCoroutine(text.print("Good luck", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;

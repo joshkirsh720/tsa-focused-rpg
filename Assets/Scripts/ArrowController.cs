@@ -29,8 +29,8 @@ public class ArrowController : MonoBehaviour
             int y = Math.Sign(a.y);
             Debug.Log(x + " " + y + " " + knockback);
             EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
-            enemy.TakeDamage(1);
-            enemy.AddKnockback(new Vector2(x * knockback, y * knockback));
+            enemy.TakeDamage(3);
+            enemy.AddKnockback(new Vector2(x * knockback * 3, y * knockback * 3));
         }
         Destroy(this.gameObject);
     }

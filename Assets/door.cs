@@ -28,5 +28,9 @@ public class door : MonoBehaviour
                 SceneManager.LoadScene(scene);
             }
         }
+        if (collision.gameObject.name == "Boss")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

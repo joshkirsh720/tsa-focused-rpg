@@ -12,6 +12,8 @@ public class minbattle : MonoBehaviour
     bool zpressed;
     public EnemyController ec;
     bool intro0run;
+    public Rigidbody2D boss;
+    public Animator bossanim;
     void Start()
     {
         StartCoroutine(fight());
@@ -64,7 +66,7 @@ public class minbattle : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("My gaurd was supposed to take care of you... Disapointing", .7f, false));
+        StartCoroutine(text.print("My guard was supposed to take care of you... Disapointing", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -124,7 +126,7 @@ public class minbattle : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("Minions finish him/her off", .7f, false));
+        StartCoroutine(text.print("Minions finish him/her/ off", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -149,6 +151,8 @@ public class minbattle : MonoBehaviour
         player.locked = false;
         introlevel = 1;
         intro0run = false;
+        boss.velocity = new Vector2(0, .25f);
+        bossanim.SetBool("walkback", true);
         EnemyController.start = true;
         print("start");
         //do stuff once space is pressed

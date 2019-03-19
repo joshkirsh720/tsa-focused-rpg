@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpikeController : MonoBehaviour
 {
     private float spikeCooldownStart = 0;
-
-    // Start is called before the first frame update
+    public double sinceattack;
+    // Start is calld before the first frame update
     void Start()
     {
         
@@ -23,11 +23,12 @@ public class SpikeController : MonoBehaviour
         if (collision.gameObject.tag == "Player" && Time.timeSinceLevelLoad - spikeCooldownStart > .5)
         {
             var time = Time.timeSinceLevelLoad - (int)Time.timeSinceLevelLoad;
-            if (.4 < time && time < .6)
+            if (.4 < time && time < .6 && Time.time > (sinceattack + .5))
             {
                 Debug.Log("Spike " + time);
                 collision.gameObject.GetComponent<PlayerController>().TakeDamage(1);
                 spikeCooldownStart = Time.timeSinceLevelLoad;
+                sinceattack = Time.time;
             }
             else return;
         }

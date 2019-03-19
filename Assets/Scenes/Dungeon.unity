@@ -75838,6 +75838,11 @@ PrefabInstance:
       propertyPath: heart3
       value: 
       objectReference: {fileID: 850849663}
+    - target: {fileID: 5928078305834237538, guid: 966e3e2ac90144c4c8a0813f814fa01b,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1737687090}
     - target: {fileID: 5928078305834237542, guid: 966e3e2ac90144c4c8a0813f814fa01b,
         type: 3}
       propertyPath: m_IsTrigger

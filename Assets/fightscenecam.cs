@@ -12,9 +12,19 @@ public class fightscenecam : MonoBehaviour
     bool zpressed;
     public EnemyController ec;
     bool intro0run;
+    public bool f = true;
+   
     void Start()
     {
-        StartCoroutine(fight());
+        EnemyController.start = false;
+        if (f)
+        {
+            StartCoroutine(fight());
+        }
+        else
+        {
+            StartCoroutine(boss());
+        }
     }
 
     // Update is called once per frame
@@ -73,7 +83,77 @@ public class fightscenecam : MonoBehaviour
         //do stuff once space is pressed
 
     }
+    public IEnumerator boss()
+    {
 
-   
+        //do stuff
+
+        //wait for space to be pressed
+        intro0run = true;
+        player.locked = true;
+        StartCoroutine(text.print(" <i>The king notices you </i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        print("kil");
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("Minions. They are so weak", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("With the TSA badge, I won't need them anymore", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+
+        }
+        StartCoroutine(text.print("Even now, your puny punches don't hurt me", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("Get ready to fight", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+
+        StartCoroutine(text.print("", .0f));
+        player.locked = false;
+        introlevel = 1;
+        intro0run = false;
+        EnemyController.start = true;
+        print("start");
+        //do stuff once space is pressed
+
+    }
+
 
 }

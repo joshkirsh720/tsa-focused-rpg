@@ -27,9 +27,10 @@ public class ChestController : MonoBehaviour
         {
             if (col.gameObject.name == "BowChest")
             {
-
+           
                 if (Input.GetKeyDown("z") && !bow)
                 {
+                    print("bow");
                     StartCoroutine(foundbow());
 
 
@@ -99,7 +100,7 @@ public class ChestController : MonoBehaviour
     public IEnumerator nothing()
     {
         nothingrun = true;
-        bow = true;
+      
         StartCoroutine(text.print("There is nothing in this chest :(", .7f, false, true, TMPro.TextAlignmentOptions.Center));
         while (PlayerText.printdone == false)
         {
