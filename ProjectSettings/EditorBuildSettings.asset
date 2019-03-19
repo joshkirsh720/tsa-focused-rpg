@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/fight.unity
     guid: bd6cef842fcca45ec994d5dde46f6908
+  - enabled: 1
+    path: Assets/Scenes/doublebattle.unity
+    guid: 6d1579f701a4144a2a5ed29edefabc2c
   m_configObjects: {}

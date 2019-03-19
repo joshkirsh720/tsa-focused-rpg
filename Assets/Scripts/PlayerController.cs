@@ -83,11 +83,11 @@ public class PlayerController : MonoBehaviour
         bool isSideIdle = false;
         bool isDownIdle = false;
         bool isUpIdle = false;
-
+        bool isSidePunch = false;
         bool isSideBow = false;
         bool isDownBow = false;
         bool isUpBow = false;
-        bool isSidePunch = false;
+
         bool isUpPunch = false;
         bool isDownPunch = false;
 
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if ((Time.time - timefromattack) < waitTime && ChestController.bow)
+        if ((Time.time - timefromattack) < waitTime && ChestController.bow || Time.time - lastAttackTime < attackDelay)
         {
             xVel = 0;
             yVel = 0;
@@ -176,32 +176,21 @@ public class PlayerController : MonoBehaviour
                 hitLocation += new Vector3(transform.localScale.x * hitDistance, 0);
                 knockbackVector.x = transform.localScale.x * knockbackForce * 5;
                 isSidePunch = true;
-            }
-            else if (currentstate == 2)
-            {
-                hitLocation += new Vector3(0, hitDistance);
-                knockbackVector.y = knockbackForce * 5;
-                isUpPunch = true;
-            }
-            else if (currentstate == 3)
-            {
-                hitLocation += new Vector3(0, -hitDistance);
-                knockbackVector.y = knockbackForce * 5;
-                isDownPunch = true;
-            }
 
-            var hit = Physics2D.OverlapCircleAll(hitLocation, hitRadius);
-            foreach (var collision in hit)
-            {
-                if (collision.gameObject.tag == "Enemy")
+
+                var hit = Physics2D.OverlapCircleAll(hitLocation, hitRadius);
+                foreach (var collision in hit)
                 {
-                    var enemy = collision.gameObject.GetComponent<EnemyController>();
-                    enemy.TakeDamage(hitDamage);
-                    enemy.AddKnockback(knockbackVector);
+                    if (collision.gameObject.tag == "Enemy")
+                    {
+                        var enemy = collision.gameObject.GetComponent<EnemyController>();
+                        enemy.TakeDamage(hitDamage);
+                        enemy.AddKnockback(knockbackVector);
+                    }
                 }
-            }
 
-            lastAttackTime = Time.time;
+                lastAttackTime = Time.time;
+            }
         }
 
         //set x and y signs to keep track of which direction the player is facing
@@ -209,16 +198,16 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log("xSign: " + xSign + " ySign: " + ySign);
         //Debug.Log("xVel: " + xVel + " yVel: " + yVel);
-
+     
         if (locked == false)
         {
             rb.velocity = new Vector2(xVel, yVel);
-            anim.SetBool("isSideBow", isSideBow);
-            anim.SetBool("isDownBow", isDownBow);
-            anim.SetBool("isUpBow", isUpBow);
             anim.SetBool("isSidePunch", isSidePunch);
             anim.SetBool("isDownPunch", isDownPunch);
             anim.SetBool("isUpPunch", isUpPunch);
+            anim.SetBool("isSideBow", isSideBow);
+            anim.SetBool("isDownBow", isDownBow);
+            anim.SetBool("isUpBow", isUpBow);
             anim.SetBool("isIdle", isIdle);
             anim.SetBool("isDownIdle", isDownIdle);
             anim.SetBool("isUpIdle", isUpIdle);
@@ -226,6 +215,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isWalking", isWalking);
             anim.SetBool("isUpWalking", isUpWalking);
             anim.SetBool("isDownWalking", isDownWalking);
+
         }
         else
         {
@@ -248,8 +238,8 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isDownBow", isDownBow);
                 anim.SetBool("isUpBow", isUpBow);
                 anim.SetBool("isSidePunch", isSidePunch);
-                anim.SetBool("isDownPunch", isDownPunch);
-                anim.SetBool("isUpPunch", isUpPunch);
+                anim.SetBool("isDownPunch", isUpPunch);
+                anim.SetBool("isUpPunch", isDownPunch);
                 anim.SetBool("isIdle", isIdle);
                 anim.SetBool("isDownIdle", isDownIdle);
                 anim.SetBool("isUpIdle", isUpIdle);

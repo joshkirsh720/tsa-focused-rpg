@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     public float enemySpeed;
     public GameObject player;
     public float attackRadius;
-    public bool start = false;
+    public static bool start = false;
     public Rigidbody2D prized;
     // Start is called before the first frame update
     void Start()
@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
                 else continue;
             }
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
         }
     }
 

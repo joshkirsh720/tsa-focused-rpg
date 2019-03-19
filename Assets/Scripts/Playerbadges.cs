@@ -69,6 +69,7 @@ public class Playerbadges : MonoBehaviour
                     amountbadges++;
                     print(amountbadges);
                     StartCoroutine(text.print(badge.badges[count].name + " Unlocked!", .9f, true, true, TMPro.TextAlignmentOptions.Center));
+                    StartCoroutine(text.print("Go to the hidden forest south to see your progress", 1.5f, true, true, TMPro.TextAlignmentOptions.Center));
                     print(amountbadges);
                 }
 

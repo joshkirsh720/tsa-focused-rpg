@@ -68,7 +68,7 @@ public class fightscenecam : MonoBehaviour
         player.locked = false;
         introlevel = 1;
         intro0run = false;
-        ec.start = true;
+        EnemyController.start = true;
         print("start");
         //do stuff once space is pressed
 
