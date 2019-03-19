@@ -9,6 +9,7 @@ public class door : MonoBehaviour
     public string scene;
     public PlayerText text;
     public bool f = true;
+    //lol
     // Start is called before the first frame update
     void Start()
     {

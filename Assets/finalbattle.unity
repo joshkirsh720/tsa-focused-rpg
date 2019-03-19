@@ -1522,9 +1522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b7473a91d434745b05704dc1a90b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 25
   rb: {fileID: 1398335819}
-  enemySpeed: 0.4
+  enemySpeed: 0.5
   player: {fileID: 1710979356}
   attackRadius: 0.2
   prized: {fileID: 977386001}
