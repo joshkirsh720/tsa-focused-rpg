@@ -71,14 +71,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-      
+
         float xVel = 0;
         float yVel = 0;
 
         bool isUpWalking = false;
         bool isDownWalking = false;
         bool isWalking = false;
-        
+
         bool isIdle = false;
         bool isSideIdle = false;
         bool isDownIdle = false;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow)) yVel = speed;
         if (Input.GetKey(KeyCode.DownArrow)) yVel = -speed;
-        if (Input.GetKey(KeyCode.LeftArrow)) 
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             xVel = -speed;
             transform.localScale = new Vector3(-1, 1, 1);
@@ -109,12 +109,12 @@ public class PlayerController : MonoBehaviour
             isWalking = true;
             currentstate = 1;
         }
-        else if(yVel > 0)
+        else if (yVel > 0)
         {
             isUpWalking = true;
             currentstate = 2;
         }
-        else if(yVel < 0)
+        else if (yVel < 0)
         {
             isDownWalking = true;
             currentstate = 3;
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
             {
                 isUpIdle = true;
             }
-            else if(currentstate == 3)
+            else if (currentstate == 3)
             {
                 isDownIdle = true;
             }
@@ -146,13 +146,14 @@ public class PlayerController : MonoBehaviour
             yVel = 0;
 
         }
-        else if (Input.GetKey("space") && ChestController.bow) { 
-        
+        else if (Input.GetKey("space") && ChestController.bow)
+        {
+
             if (currentstate == 1)
             {
                 StartCoroutine(shootside());
-                
-                
+
+
                 isSideBow = true;
             }
             else if (currentstate == 2)
@@ -167,24 +168,24 @@ public class PlayerController : MonoBehaviour
             }
             timefromattack = Time.time;
         }
-        else if(Input.GetKey("x") && Time.time - lastAttackTime > attackDelay)
+        else if (Input.GetKey("x") && Time.time - lastAttackTime > attackDelay)
         {
             print("attack");
             var hitLocation = transform.position;
             Vector2 knockbackVector = new Vector2();
-            if(currentstate == 1)
+            if (currentstate == 1)
             {
                 hitLocation += new Vector3(transform.localScale.x * hitDistance, 0);
                 knockbackVector.x = transform.localScale.x * knockbackForce * 5;
                 punchside = true;
             }
-            else if(currentstate == 2)
+            else if (currentstate == 2)
             {
                 hitLocation += new Vector3(0, hitDistance);
                 knockbackVector.y = knockbackForce * 5;
                 punchup = true;
             }
-            else if(currentstate == 3)
+            else if (currentstate == 3)
             {
                 hitLocation += new Vector3(0, -hitDistance);
                 knockbackVector.y = knockbackForce * 5;
@@ -192,9 +193,9 @@ public class PlayerController : MonoBehaviour
             }
 
             var hit = Physics2D.OverlapCircleAll(hitLocation, hitRadius);
-            foreach(var collision in hit)
+            foreach (var collision in hit)
             {
-                if(collision.gameObject.tag == "Enemy")
+                if (collision.gameObject.tag == "Enemy")
                 {
                     var enemy = collision.gameObject.GetComponent<EnemyController>();
                     enemy.TakeDamage(hitDamage);
@@ -206,7 +207,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //set x and y signs to keep track of which direction the player is facing
-       
+
 
         //Debug.Log("xSign: " + xSign + " ySign: " + ySign);
         //Debug.Log("xVel: " + xVel + " yVel: " + yVel);
@@ -232,11 +233,11 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetBool("isSideIdle", true);
             }
-            else if(isUpWalking)
+            else if (isUpWalking)
             {
                 anim.SetBool("isUpIdle", true);
             }
-            else if(isDownWalking)
+            else if (isDownWalking)
             {
                 anim.SetBool("isDownIdle", true);
             }
@@ -274,7 +275,7 @@ public class PlayerController : MonoBehaviour
     }
     private void UpdateHearts()
     {
-        if(health == 0)
+        if (health == 0)
         {
             heart1.SetActive(false);
             heart2.SetActive(false);

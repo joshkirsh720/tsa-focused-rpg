@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        StartCoroutine("Attack");
     }
 
     // Update is called once per frame
@@ -27,9 +27,7 @@ public class EnemyController : MonoBehaviour
         {
             int xSign = Math.Sign(player.transform.position.x - transform.position.x);
         int ySign = Math.Sign(player.transform.position.y - transform.position.y);
-        rb.velocity = new Vector2(xSign * enemySpeed, ySign * enemySpeed);
-       
-            StartCoroutine("Attack");
+            rb.velocity = new Vector2(xSign * enemySpeed, ySign * enemySpeed);
         }
     }
 
@@ -58,6 +56,7 @@ public class EnemyController : MonoBehaviour
                 if (thing.gameObject.tag == "Player")
                 {
                     thing.gameObject.GetComponent<PlayerController>().TakeDamage(1);
+                    break;
                 }
                 else continue;
             }
