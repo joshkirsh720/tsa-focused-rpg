@@ -51,7 +51,7 @@ public class fightscenecam : MonoBehaviour
         //wait for space to be pressed
         intro0run = true;
         player.locked = true;
-        StartCoroutine(text.print(" <i>You encounter a gaurd</i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        StartCoroutine(text.print(" <i>You encounter a guard</i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
         print("kil");
         while (PlayerText.printdone == false)
         {
@@ -91,7 +91,7 @@ public class fightscenecam : MonoBehaviour
         //wait for space to be pressed
         intro0run = true;
         player.locked = true;
-        StartCoroutine(text.print(" <i>The king notices you </i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        StartCoroutine(text.print(" <i>The monster notices you </i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
         print("kil");
         while (PlayerText.printdone == false)
         {
@@ -113,7 +113,7 @@ public class fightscenecam : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("With the TSA badge, I won't need them anymore", .7f, false));
+        StartCoroutine(text.print("I'll kill you myself", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -124,7 +124,7 @@ public class fightscenecam : MonoBehaviour
 
 
         }
-        StartCoroutine(text.print("Even now, your puny punches don't hurt me", .7f, false));
+        StartCoroutine(text.print("Your puny punches and arrows don't hurt me", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -134,7 +134,47 @@ public class fightscenecam : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("Get ready to fight", .7f, false));
+        StartCoroutine(text.print("I'm ALREADY DEAD", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("I will take over the world all thanks to you", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("Don't you realize, Science only leads to doom", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("How lazy can you humans get.... Pathetic", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("I'm doing you a favor by cleansing this planet", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;

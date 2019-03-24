@@ -22,15 +22,18 @@ public class ArrowController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.name != "Boss")
         {
-            var a = rb.velocity;
-            int x = Math.Sign(a.x);
-            int y = Math.Sign(a.y);
-            Debug.Log(x + " " + y + " " + knockback);
-            EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
-            enemy.TakeDamage(3);
-            enemy.AddKnockback(new Vector2(x * knockback * 3, y * knockback * 3));
+            if (collision.gameObject.tag == "Enemy")
+            {
+                var a = rb.velocity;
+                int x = Math.Sign(a.x);
+                int y = Math.Sign(a.y);
+                Debug.Log(x + " " + y + " " + knockback);
+                EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+                enemy.TakeDamage(3);
+                enemy.AddKnockback(new Vector2(x * knockback * 3, y * knockback * 3));
+            }
         }
         Destroy(this.gameObject);
     }

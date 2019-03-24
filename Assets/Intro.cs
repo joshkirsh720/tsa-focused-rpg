@@ -41,7 +41,7 @@ public class Intro : MonoBehaviour
     public IEnumerator story()
     {
         vlad.SetActive(true);
-        StartCoroutine(text.print("You are a close friend of the king of the land.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("You have made a grave mistake.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -51,7 +51,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("Your king has used a secret magical object for ages to maintain his rule over the kingdom.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft)); 
+        StartCoroutine(text.print("In your attempt to animate the dead, you've released a beast upon the land", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft)); 
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -61,7 +61,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("However, The evil tree ruler has somehow managed to get into the castle and steal the object.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("The evil deformed creation has been ravaging the poor people of the lands", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -71,7 +71,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("Now, he will gain the immense power from the badge and will finally able to take over the world.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("It was last seen running into the caves up north", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -81,7 +81,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("Your mission is to stop this by stealing the badge back from the king's rival.", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("You need to stop it before it takes over the world", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -91,7 +91,7 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(text.print("The tree king was last spotted fleeing into the caves up north", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("Sometimes dead is better", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -100,7 +100,16 @@ public class Intro : MonoBehaviour
         {
             yield return null;
         }
-        StartCoroutine(text.print("Good luck", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        StartCoroutine(text.print("I wish you good luck", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+        }
+        StartCoroutine(text.print("You will need it", 0.7f, false, true, TMPro.TextAlignmentOptions.TopLeft));
         while (PlayerText.printdone == false)
         {
             yield return null;

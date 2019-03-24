@@ -44,7 +44,7 @@ public class minbattle : MonoBehaviour
         EnemyController.start = false;
         intro0run = true;
         player.locked = true;
-        StartCoroutine(text.print(" <i>Evil King Treant Notices you</i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        StartCoroutine(text.print(" <i>The monster notices you</i>", .7f, false, false, TMPro.TextAlignmentOptions.Center));
         print("kil");
         while (PlayerText.printdone == false)
         {
@@ -56,7 +56,7 @@ public class minbattle : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("Ah. King Vlad must have sent you", .7f, false));
+        StartCoroutine(text.print("Finally, my creator, you have arrived", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -66,7 +66,7 @@ public class minbattle : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("My guard was supposed to take care of you... Disapointing", .7f, false));
+        StartCoroutine(text.print("My guard was supposed to take care of you", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -76,7 +76,7 @@ public class minbattle : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("Soon I will have all the power of the TSA Badge", .7f, false));
+        StartCoroutine(text.print("Soon, I will be able to take over the world", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -86,7 +86,27 @@ public class minbattle : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("I'll be unstoppabel", .7f, false));
+        StartCoroutine(text.print("I'll make more like me", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("This couldn't have happened without you", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("You tried to play god and ended up creating a devil", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -106,37 +126,7 @@ public class minbattle : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("HAHAHHAHAHAHHAHAHAHAHHA", .7f, false));
-        while (PlayerText.printdone == false)
-        {
-            yield return null;
-        }
-        while (Input.GetKeyDown("z") == false)
-        {
-            yield return null;
-
-        }
-        StartCoroutine(text.print("HAHAHHAHAHAHHAHAHAHAHHA", .7f, false));
-        while (PlayerText.printdone == false)
-        {
-            yield return null;
-        }
-        while (Input.GetKeyDown("z") == false)
-        {
-            yield return null;
-
-        }
-        StartCoroutine(text.print("Minions finish him/her/ off", .7f, false));
-        while (PlayerText.printdone == false)
-        {
-            yield return null;
-        }
-        while (Input.GetKeyDown("z") == false)
-        {
-            yield return null;
-
-        }
-        StartCoroutine(text.print("I may be evil, but I don't assume", .7f, false));
+        StartCoroutine(text.print("Minions finish him off", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;

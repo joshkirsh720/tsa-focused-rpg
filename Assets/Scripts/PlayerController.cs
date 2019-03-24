@@ -307,7 +307,7 @@ public class PlayerController : MonoBehaviour
     {
         
         print("dead");
-        StartCoroutine(text.print(" You Died. Press Z to respawn", .7f, false, false, TMPro.TextAlignmentOptions.Center));
+        StartCoroutine(text.print(" You Died.Science only leads to doom.Press Z to respawn", .7f, false, false, TMPro.TextAlignmentOptions.Center));
         print("kil");
         while (PlayerText.printdone == false)
         {
@@ -341,7 +341,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             PlayerController.lastloc = 0;
-            SceneManager.LoadScene("doublefight");
+            SceneManager.LoadScene("doublebattle");
         }
     }
 }

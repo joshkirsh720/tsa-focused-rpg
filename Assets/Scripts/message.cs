@@ -96,7 +96,7 @@ public class message : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("Hey those caves up there are pretty cool huh", .7f, false));
+        StartCoroutine(text.print("HELP, some monster just ran by", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -106,7 +106,17 @@ public class message : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("I just saw a bunch of trolls go in there", .7f, false));
+        StartCoroutine(text.print("He took all my stuff", .7f, false));
+        while (PlayerText.printdone == false)
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown("z") == false)
+        {
+            yield return null;
+
+        }
+        StartCoroutine(text.print("Who would create such a thing", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -130,7 +140,7 @@ public class message : MonoBehaviour
         print("intro");
         player.locked = true;
         intro1run = true;
-        StartCoroutine(text.print("They seemed like they were in a hurry", .7f, false));
+        StartCoroutine(text.print("WAH WAH WAH WAH", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;

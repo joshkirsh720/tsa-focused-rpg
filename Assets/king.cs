@@ -76,7 +76,7 @@ public class king : MonoBehaviour
             yield return null;
 
         }
-        StartCoroutine(text.print("Wow you got the TSA badge", .7f, false));
+        StartCoroutine(text.print("How did you defeat the creature", .7f, false));
         while (PlayerText.printdone == false)
         {
             yield return null;
@@ -87,7 +87,7 @@ public class king : MonoBehaviour
 
         }
        
-            StartCoroutine(text.print("The King will be very happy", .7f, false));
+            StartCoroutine(text.print("Thats impossible", .7f, false));
             while (PlayerText.printdone == false)
             {
                 yield return null;
@@ -97,7 +97,7 @@ public class king : MonoBehaviour
                 yield return null;
 
             }
-            StartCoroutine(text.print("I'll give it to him right away", .5f, false));
+            StartCoroutine(text.print("Your evil creation", .5f, false));
             while (PlayerText.printdone == false)
             {
                 yield return null;
